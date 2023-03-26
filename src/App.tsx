@@ -3,18 +3,20 @@
  *****************************************************************************/
 import './App.css';
 import Header from './components/Header';
+import Main from './components/Main';
 import React, { Component } from 'react';
 
-
-
+/**
+ * @class Main entrypoint of page after index.js
+ * @author Chad Chapman
+ */
 class App extends Component {
-    constructor(props: any) {
-        super(props);
-    }
-
     render() {
         return(
-          <Header />
+          <div>
+            <Header />
+            <Main />
+          </div>
         );
     }
 }
