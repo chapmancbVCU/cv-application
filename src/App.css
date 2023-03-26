@@ -18,7 +18,15 @@
 }
 
 @media only screen and (min-width: 700px) {
+  .cv-container, .form-container {
+    width: 45%;
+    border: solid 1px grey;
+  }
+
+
   .main {
+    margin-top: 25px;
     flex-direction: row;
+    justify-content: space-evenly;
   }
 }
