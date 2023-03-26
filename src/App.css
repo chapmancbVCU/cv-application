@@ -3,6 +3,12 @@
   padding: 0;
 }
 
+.cv-container, .form-container {
+  margin-bottom: 25px;
+  width: 90%;
+  border: solid 1px grey;
+}
+
 .header {
   background-color: rgb(85, 85, 245);
   color: white;
@@ -13,11 +19,15 @@
 }
 
 .main {
+  margin-top: 25px;
   display: flex;
   flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
 }
 
-@media only screen and (min-width: 700px) {
+@media only screen and (min-width: 900px) {
   .cv-container, .form-container {
     width: 45%;
     border: solid 1px grey;
@@ -25,7 +35,6 @@
 
 
   .main {
-    margin-top: 25px;
     flex-direction: row;
     justify-content: space-evenly;
   }
