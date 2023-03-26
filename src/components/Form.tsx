@@ -5,7 +5,11 @@ import React, { Component } from 'react';
 
 class Form extends Component {
     render() {
-        return <p>Form</p>
+        return(
+            <div className="formContainer">
+                Form
+            </div>
+        )
     }
 }
 
