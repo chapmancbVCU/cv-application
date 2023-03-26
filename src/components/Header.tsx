@@ -9,7 +9,7 @@ import React, { Component } from 'react';
  * @author Chad Chapman
  * @extends Component
  */
-class Header extends Component{
+class Header extends Component {
     /**
      * Render function for the header component of this webpage.
      * @returns HTMLDivElement containing the header.
