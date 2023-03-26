@@ -5,7 +5,11 @@ import React, { Component } from 'react';
 
 class CV extends Component {
     render() {
-        return <p>CV section</p>;
+        return(
+            <div className="CVContainer">
+                CV
+            </div>
+        );
     }
 }
 
