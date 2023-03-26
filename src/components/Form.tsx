@@ -6,10 +6,10 @@ import React, { Component } from 'react';
 class Form extends Component {
     render() {
         return(
-            <div className="formContainer">
+            <div className="form-container">
                 Form
             </div>
-        )
+        );
     }
 }
 
