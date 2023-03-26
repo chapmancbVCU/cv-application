@@ -3,8 +3,14 @@
   padding: 0;
 }
 
+body {
+  font-family: "Helvetica", "Arial", sans-serif;
+  font-size: 16px;
+  line-height: 1.3;
+}
+
 .cv-container, .form-container {
-  margin-bottom: 25px;
+  margin: 25px auto;
   width: 90%;
   border: solid 1px grey;
 }
@@ -19,7 +25,8 @@
 }
 
 .main {
-  margin-top: 25px;
+  color: #5D6063;
+  background-color: #EAEDF0;
   display: flex;
   flex-direction: column;
 
