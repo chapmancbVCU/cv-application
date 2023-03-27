@@ -14,6 +14,31 @@ body {
   margin: 25px auto;
   width: 90%;
   border: solid 1px grey;
+  border-radius: 3px;
+}
+
+.cv-form {
+  margin: 15px;
+}
+
+.form-row {
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.form-row input[type='text'] {
+  background-color: #FFFFFF;
+  border: solid 1px #D6D9DC;
+  border-radius: 3px;
+  width: 100%;
+  padding: 7px;
+  font-size: 14px;
+}
+
+.form-row label {
+  margin-bottom: 15px;
 }
 
 h2 {
@@ -37,18 +62,39 @@ h2 {
   flex-direction: column;
 
   justify-content: center;
-  align-items: center;
+
 }
 
-@media only screen and (min-width: 900px) {
+@media only screen and (min-width: 1000px) {
   .cv-container, .form-container {
     width: 45%;
     border: solid 1px grey;
   }
 
-
   .main {
     flex-direction: row;
     justify-content: space-evenly;
+  }
+}
+
+@media only screen and (min-width: 700px) {
+  .cv-form {
+   
+  }
+
+  .form-row {
+    flex-direction: row;
+    align-items: flex-start; /* To avoid stretching */
+    margin-bottom: 20px;
+  }
+  .form-row input[type='text'] {
+    height: initial;
+    flex-grow: 1;
+  }
+  .form-row label {
+    text-align: right;
+    width: 120px;
+    margin-top: 7px;
+    padding-right: 20px;
   }
 }
