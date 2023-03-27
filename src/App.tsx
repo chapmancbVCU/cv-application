@@ -9,8 +9,13 @@ import React, { Component } from 'react';
 /**
  * @class Main entrypoint of page after index.js
  * @author Chad Chapman
+ * @extends Component
  */
 class App extends Component {
+    /**
+     * Rendering of all website components start here.
+     * @returns HTMLDivElement containing body content.
+     */
     render() {
         return(
           <div>
