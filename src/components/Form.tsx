@@ -34,7 +34,8 @@ class Form extends Component<{}, { firstName: string }> {
                             name="first-name" 
                             type="text"
                             placeholder="Joe"
-                            onChange={event => this.setState({firstName: event.target.value})}
+                            onChange={event => this.setState(
+                                {firstName: event.target.value})}
                             value={this.state.firstName}/>
                     </div>
                     {this.state.firstName}
