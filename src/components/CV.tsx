@@ -10,7 +10,7 @@ interface CVProps {
 const CV : FC<CVProps> = ({firstName}) => {
     return(
         <div className="cv-container">
-            <h2>Sample Output</h2>
+            <h2>Sample CV Application</h2>
             <p>{firstName}</p>
         </div>
     );
