@@ -4,14 +4,17 @@
 import React, { FC} from 'react';
 
 interface CVProps {
-    firstName: string
+    firstName: string;
+    lastName: string;
 }
 
-const CV : FC<CVProps> = ({firstName}) => {
+const CV : FC<CVProps> = ({firstName, lastName}) => {
     return(
         <div className="cv-container">
             <h2>Sample CV Application</h2>
-            <p>{firstName}</p>
+            <div>
+                {firstName} {lastName}
+            </div>
         </div>
     );
     
