@@ -6,13 +6,20 @@ import React, { FC } from 'react';
 interface ApplicationProps {
     firstName: string;
     handleFirstNameInput: any;
-    lastName: string;
     handleLastNameInput: any;
+    handleTitleInput: any;
+    lastName: string;
+    title: string;
 }
 
 const Form : FC<ApplicationProps> = ({
-    firstName, handleFirstNameInput,
-    lastName, handleLastNameInput}) => { 
+    firstName, 
+    handleFirstNameInput,
+    handleLastNameInput,
+    handleTitleInput,
+    lastName,
+    title,}) => { 
+        
     return(
         <div className="form-container">
             <h2>Personal Information</h2>
@@ -41,6 +48,18 @@ const Form : FC<ApplicationProps> = ({
                         required
                         onChange={(event) => handleLastNameInput(event)}
                         value={lastName}/>
+                </div>
+                <div className="form-row">
+                    <label htmlFor="title">Title</label>
+                    <input 
+                        id="title" 
+                        name="title" 
+                        type="text"
+                        minLength={5}
+                        maxLength={25}
+                        required
+                        onChange={(event) => handleTitleInput(event)}
+                        value={title}/>
                 </div>
             </form>
         </div>

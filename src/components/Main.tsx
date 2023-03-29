@@ -6,8 +6,10 @@ import Form from './Form';
 import React, { useState } from 'react';
 
 function Main() {
-    const [firstName, setFirstName] = useState("")
+    const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
+    const [title, setTitle] = useState("");
+
     function handleFirstNameInput(event: any) {
         setFirstName(event.target.value);
     }
@@ -16,11 +18,23 @@ function Main() {
         setLastName(event.target.value);
     }
 
+    function handleTitleInput(event: any) {
+        setTitle(event.target.value);
+    }
+
     return(
         <div className="main">
-            <Form firstName={firstName} handleFirstNameInput={handleFirstNameInput}
-                lastName={lastName} handleLastNameInput={handleLastNameInput}/>
-            <CV firstName={firstName} lastName={lastName}/>
+            <Form firstName={firstName} 
+                handleFirstNameInput={handleFirstNameInput}
+                handleLastNameInput={handleLastNameInput}
+                handleTitleInput={handleTitleInput}
+                lastName={lastName} 
+                title={title} 
+            />
+            <CV firstName={firstName} 
+                lastName={lastName}
+                title={title}
+            />
         </div>
     );
     
