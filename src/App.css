@@ -21,6 +21,16 @@ body {
   margin: 15px;
 }
 
+.cv-header {
+  background-color: rgb(85, 85, 245);
+  color: rgb(228, 228, 228);
+}
+
+.cv-header-text {
+  text-align: left;
+  margin-left: 15px;
+}
+
 .form-row {
   margin-bottom: 40px;
   display: flex;
@@ -93,7 +103,7 @@ h2 {
   }
   .form-row label {
     text-align: right;
-    width: 120px;
+    width: 130px;
     margin-top: 7px;
     padding-right: 20px;
   }
