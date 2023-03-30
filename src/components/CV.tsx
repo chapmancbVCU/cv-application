@@ -4,12 +4,13 @@
 import React, { FC} from 'react';
 
 interface CVProps {
-    title: string
+    details: string;
+    title: string;
     firstName: string;
     lastName: string;
 }
 
-const CV : FC<CVProps> = ({firstName, lastName, title}) => {
+const CV : FC<CVProps> = ({details, firstName, lastName, title}) => {
     return(
         <div className="cv-container">
             <div className="cv-header">
@@ -23,7 +24,7 @@ const CV : FC<CVProps> = ({firstName, lastName, title}) => {
 
             <div className="cv-details">
                 <div className="section-label details-label">Details</div>
-
+                <div className="details">{details}</div>
             </div>
         </div>
     );
