@@ -122,6 +122,15 @@ h2 {
   flex-grow: 1;
 }
 
+.profile {
+  margin-left: 15px;
+}
+
+.profile-label {
+  width: 60px;
+  text-align: center;
+}
+
 .section-label {
   background-color: black;
   color: white;

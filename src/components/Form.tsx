@@ -4,24 +4,24 @@
 import React, { FC } from 'react';
 
 interface ApplicationProps {
-    details: string;
     firstName: string;
-    handleDetailsInput: any;
     handleFirstNameInput: any;
     handleLastNameInput: any;
+    handleProfileInput: any;
     handleTitleInput: any;
     lastName: string;
+    profile: string;
     title: string;
 }
 
 const Form : FC<ApplicationProps> = ({
-    details,
     firstName,
-    handleDetailsInput, 
     handleFirstNameInput,
     handleLastNameInput,
+    handleProfileInput, 
     handleTitleInput,
     lastName,
+    profile,
     title,}) => { 
         
     return(
@@ -63,14 +63,14 @@ const Form : FC<ApplicationProps> = ({
                         value={title}/>
                 </div>
                 <div className="form-row">
-                    <label htmlFor="details">Details</label>
-                    <textarea id="details" 
-                        name="details"
+                    <label htmlFor="profile">Details</label>
+                    <textarea id="profile" 
+                        name="profile"
                         minLength={5}
                         maxLength={300}
                         required
-                        onChange={(event) => handleDetailsInput(event)}
-                        value={details}>
+                        onChange={(event) => handleProfileInput(event)}
+                        value={profile}>
                     </textarea>
                 </div>
             </form>
