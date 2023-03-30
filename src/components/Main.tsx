@@ -26,6 +26,7 @@ function Main() {
     /**
      * Event handler that updates value of firstName when input is detected.
      * @param event The event provided by onChange.
+     * @memberof Main
      */
     function handleFirstNameInput(event: any) {
         setFirstName(event.target.value);
