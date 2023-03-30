@@ -12,14 +12,16 @@ interface CVProps {
 const CV : FC<CVProps> = ({firstName, lastName, title}) => {
     return(
         <div className="cv-container">
-            <h2>Sample CV Application</h2>
             <div className="cv-header">
-                <h2 className="cv-header-text">{firstName} {lastName}</h2>
-                <h3 className="cv-header-text">{title}</h3>
+                <img className="cv-photo"></img>
+                <div className="name-title">
+                    <div className="cv-header-text cv-name">{firstName}</div>
+                    <div className="cv-header-text cv-name"> {lastName}</div>
+                    <div className="cv-header-text">{title}</div>
+                </div>
             </div>
         </div>
     );
-    
 }
 
 export default CV;
