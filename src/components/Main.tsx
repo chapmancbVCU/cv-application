@@ -23,6 +23,10 @@ function Main() {
     const [profile, setProfile] = useState("");
     const [title, setTitle] = useState("");
 
+    /**
+     * Event handler that updates value of firstName when input is detected.
+     * @param event The event provided by onChange.
+     */
     function handleFirstNameInput(event: any) {
         setFirstName(event.target.value);
     }
