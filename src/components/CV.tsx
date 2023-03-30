@@ -10,13 +10,15 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
-import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
+import { faEnvelope, faLocationDot, faMobileScreen } 
+    from "@fortawesome/free-solid-svg-icons";
 import React, { FC } from 'react';
 
 // Make FontAwesome Icon available to use.
+library.add(faEnvelope);
 library.add(faLinkedinIn);
 library.add(faLocationDot);
-
+library.add(faMobileScreen);
 /**
  * @interface CVProps The interface that describes variables associated with 
  * props of the CV component.
@@ -63,6 +65,12 @@ const CV : FC<CVProps> = ({
                 <div className="cv-details-row">
                     <FontAwesomeIcon icon={faLinkedinIn} className="icon"/>
                     <div>{linkedInLink}</div>
+                </div>
+                <div className="cv-details-row">
+                    <FontAwesomeIcon icon={faMobileScreen} className="icon"/>
+                </div>
+                <div className="cv-details-row">
+                <FontAwesomeIcon icon={faEnvelope} className="icon"/>
                 </div>
             </div>
 
