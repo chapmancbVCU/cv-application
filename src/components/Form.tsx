@@ -24,6 +24,11 @@ interface ApplicationProps {
     title: string;
 }
 
+/**
+ * Renders the form  component of this website.
+ * @param param0 
+ * @returns HTMLDivElement that contains CV form.
+ */
 const Form : FC<ApplicationProps> = ({
     firstName,
     handleFirstNameInput,
