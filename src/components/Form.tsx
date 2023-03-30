@@ -14,7 +14,9 @@ import React, { FC } from 'react';
  * associated with props of the Form component.
  */
 interface ApplicationProps {
+    address: string;
     firstName: string;
+    handleAddressInput: any;
     handleFirstNameInput: any;
     handleLastNameInput: any;
     handleProfileInput: any;
@@ -30,7 +32,9 @@ interface ApplicationProps {
  * @returns HTMLDivElement that contains CV form.
  */
 const Form : FC<ApplicationProps> = ({
+    address,
     firstName,
+    handleAddressInput,
     handleFirstNameInput,
     handleLastNameInput,
     handleProfileInput, 
@@ -76,6 +80,16 @@ const Form : FC<ApplicationProps> = ({
                         required
                         onChange={(event) => handleTitleInput(event)}
                         value={title}/>
+                </div>
+                <div className="form-row">
+                    <label htmlFor="address">Address</label>
+                    <input id="address" 
+                        name="address" 
+                        type="text"
+                        minLength={5}
+                        required
+                        onChange={(event) => handleAddressInput(event)}
+                        value={address}/>
                 </div>
                 <div className="form-row">
                     <label htmlFor="profile">Details</label>

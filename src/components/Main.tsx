@@ -11,6 +11,7 @@
 import CV from './CV';
 import Form from './Form';
 import React, { useState } from 'react';
+import { SocketAddress } from 'net';
 
 /**
  * Renders and manages hooks for the Form and CV Application child components.
@@ -18,10 +19,15 @@ import React, { useState } from 'react';
  * components.
  */
 function Main() {
+    const [address, setAddress] = useState("");
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
     const [profile, setProfile] = useState("");
     const [title, setTitle] = useState("");
+
+    function handleAddressInput(event: any) {
+        setAddress(event.target.value);
+    }
 
     /**
      * Event handler that updates value of firstName when input is detected.
@@ -46,8 +52,10 @@ function Main() {
 
     return(
         <div className="main">
-            <Form 
-                firstName={firstName} 
+            <Form
+                address={address} 
+                firstName={firstName}
+                handleAddressInput={handleAddressInput}
                 handleFirstNameInput={handleFirstNameInput}
                 handleLastNameInput={handleLastNameInput}
                 handleProfileInput={handleProfileInput}
@@ -56,7 +64,8 @@ function Main() {
                 profile={profile}
                 title={title} 
             />
-            <CV firstName={firstName} 
+            <CV address={address}
+                firstName={firstName} 
                 lastName={lastName}
                 profile={profile}
                 title={title}

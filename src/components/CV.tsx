@@ -9,17 +9,18 @@
  *****************************************************************************/
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { faLocationDot, faUser } from "@fortawesome/free-solid-svg-icons";
+import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import React, { FC } from 'react';
 
+// Make FontAwesome Icon available to use.
 library.add(faLocationDot);
-
 
 /**
  * @interface CVProps The interface that describes variables associated with 
  * props of the CV component.
  */
 interface CVProps {
+    address: string;
     firstName: string;
     lastName: string;
     profile: string;
@@ -31,7 +32,7 @@ interface CVProps {
  * @param param0 
  * @returns HTMLDivElement that contains CV Application.
  */
-const CV : FC<CVProps> = ({firstName, lastName, profile, title}) => {
+const CV : FC<CVProps> = ({address, firstName, lastName, profile, title}) => {
     return(
         <div className="cv-container">
             <div className="cv-header">
@@ -45,8 +46,9 @@ const CV : FC<CVProps> = ({firstName, lastName, profile, title}) => {
 
             <div className="cv-details">
                 <div className="section-label details-label">Details</div>
-                <div className="address">
-                    <FontAwesomeIcon icon={faLocationDot} />
+                <div className="cv-details-row">
+                    <FontAwesomeIcon icon={faLocationDot} className="icon"/>
+                    <div>{address}</div>
                 </div>
             </div>
 
