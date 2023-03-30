@@ -20,6 +20,11 @@ const CV : FC<CVProps> = ({firstName, lastName, title}) => {
                     <div className="cv-header-text">{title}</div>
                 </div>
             </div>
+
+            <div className="cv-details">
+                <div className="section-label details-label">Details</div>
+
+            </div>
         </div>
     );
 }

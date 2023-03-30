@@ -61,6 +61,7 @@ const Form : FC<ApplicationProps> = ({
                         onChange={(event) => handleTitleInput(event)}
                         value={title}/>
                 </div>
+                
             </form>
         </div>
     );
