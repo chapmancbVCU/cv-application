@@ -7,7 +7,13 @@
 /******************************************************************************
  * IMPORTS                                                                    *
  *****************************************************************************/
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { faLocationDot, faUser } from "@fortawesome/free-solid-svg-icons";
 import React, { FC } from 'react';
+
+library.add(faLocationDot);
+
 
 /**
  * @interface CVProps The interface that describes variables associated with 
@@ -39,6 +45,9 @@ const CV : FC<CVProps> = ({firstName, lastName, profile, title}) => {
 
             <div className="cv-details">
                 <div className="section-label details-label">Details</div>
+                <div className="address">
+                    <FontAwesomeIcon icon={faLocationDot} />
+                </div>
             </div>
 
             <div className="cv-profile">
