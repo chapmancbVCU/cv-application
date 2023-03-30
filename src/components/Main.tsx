@@ -1,3 +1,10 @@
+/**
+ * @file Man.tsx file is responsible for hooks that handles props for the 
+ * form and CV application components.  It is also the parent of those 
+ * components.
+ * @author Chad Chapman
+ */
+
 /******************************************************************************
  * IMPORTS                                                                    *
  *****************************************************************************/
@@ -5,6 +12,11 @@ import CV from './CV';
 import Form from './Form';
 import React, { useState } from 'react';
 
+/**
+ * Renders and manages hooks for the Form and CV Application child components.
+ * @returns HTMLDivElement that contains the Form and CV Application 
+ * components.
+ */
 function Main() {
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");

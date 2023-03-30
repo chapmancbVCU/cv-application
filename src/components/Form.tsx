@@ -1,8 +1,18 @@
+/**
+ * @file Form.tsx file is responsible for handling props and rendering of the 
+ * form component of the CV application.
+ * @author Chad Chapman
+ */
+
 /******************************************************************************
  * IMPORTS                                                                    *
  *****************************************************************************/
 import React, { FC } from 'react';
 
+/**
+ * @interface ApplicationProps The interface that describes variables 
+ * associated with props of the Form component.
+ */
 interface ApplicationProps {
     firstName: string;
     handleFirstNameInput: any;

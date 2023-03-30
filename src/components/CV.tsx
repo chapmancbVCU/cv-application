@@ -1,8 +1,18 @@
+/**
+ * @file CV.tsx file is responsible for handling props and rendering of the CV 
+ * application.
+ * @author Chad Chapman
+ */
+
 /******************************************************************************
  * IMPORTS                                                                    *
  *****************************************************************************/
-import React, { FC} from 'react';
+import React, { FC } from 'react';
 
+/**
+ * @interface CVProps The interface that describes variables associated with 
+ * props of the CV component.
+ */
 interface CVProps {
     firstName: string;
     lastName: string;
@@ -10,6 +20,11 @@ interface CVProps {
     title: string;
 }
 
+/**
+ * Renders the CV Application component of this website.
+ * @param param0 
+ * @returns HTMLDivElement that contains CV Application.
+ */
 const CV : FC<CVProps> = ({firstName, lastName, profile, title}) => {
     return(
         <div className="cv-container">
