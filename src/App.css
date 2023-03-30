@@ -163,10 +163,6 @@ h2 {
 }
 
 @media only screen and (min-width: 700px) {
-  .cv-form {
-   
-  }
-
   .form-row {
     flex-direction: row;
     align-items: flex-start; /* To avoid stretching */
