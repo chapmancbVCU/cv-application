@@ -19,9 +19,11 @@ interface ApplicationProps {
     handleAddressInput: any;
     handleFirstNameInput: any;
     handleLastNameInput: any;
+    handleLinkedInLink: any;
     handleProfileInput: any;
     handleTitleInput: any;
     lastName: string;
+    linkedInLink: string;
     profile: string;
     title: string;
 }
@@ -32,16 +34,19 @@ interface ApplicationProps {
  * @returns HTMLDivElement that contains CV form.
  */
 const Form : FC<ApplicationProps> = ({
-    address,
-    firstName,
-    handleAddressInput,
-    handleFirstNameInput,
-    handleLastNameInput,
-    handleProfileInput, 
-    handleTitleInput,
-    lastName,
-    profile,
-    title,}) => { 
+        address,
+        firstName,
+        handleAddressInput,
+        handleFirstNameInput,
+        handleLastNameInput,
+        handleLinkedInLink,
+        handleProfileInput, 
+        handleTitleInput,
+        lastName,
+        linkedInLink,
+        profile,
+        title
+    }) => { 
         
     return(
         <div className="form-container">
@@ -90,6 +95,16 @@ const Form : FC<ApplicationProps> = ({
                         required
                         onChange={(event) => handleAddressInput(event)}
                         value={address}/>
+                </div>
+                <div className="form-row">
+                    <label htmlFor="linked-in">LinkedIn</label>
+                    <input id="linked-in" 
+                        name="linked-in" 
+                        type="text"
+                        minLength={5}
+                        required
+                        onChange={(event) => handleLinkedInLink(event)}
+                        value={linkedInLink}/>
                 </div>
                 <div className="form-row">
                     <label htmlFor="profile">Details</label>

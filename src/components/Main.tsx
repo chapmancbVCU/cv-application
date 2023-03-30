@@ -11,7 +11,6 @@
 import CV from './CV';
 import Form from './Form';
 import React, { useState } from 'react';
-import { SocketAddress } from 'net';
 
 /**
  * Renders and manages hooks for the Form and CV Application child components.
@@ -22,6 +21,7 @@ function Main() {
     const [address, setAddress] = useState("");
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
+    const [linkedInLink, setLinkedInLink] = useState("");
     const [profile, setProfile] = useState("");
     const [title, setTitle] = useState("");
 
@@ -42,6 +42,10 @@ function Main() {
         setLastName(event.target.value);
     }
 
+    function handleLinkedInLink(event: any) {
+        setLinkedInLink(event.target.value);
+    }
+
     function handleProfileInput(event: any) {
         setProfile(event.target.value);
     }
@@ -58,15 +62,18 @@ function Main() {
                 handleAddressInput={handleAddressInput}
                 handleFirstNameInput={handleFirstNameInput}
                 handleLastNameInput={handleLastNameInput}
+                handleLinkedInLink={handleLinkedInLink}
                 handleProfileInput={handleProfileInput}
                 handleTitleInput={handleTitleInput}
                 lastName={lastName} 
+                linkedInLink={linkedInLink}
                 profile={profile}
                 title={title} 
             />
             <CV address={address}
                 firstName={firstName} 
                 lastName={lastName}
+                linkedInLink={linkedInLink}
                 profile={profile}
                 title={title}
             />

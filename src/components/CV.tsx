@@ -9,10 +9,12 @@
  *****************************************************************************/
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { library } from "@fortawesome/fontawesome-svg-core";
+import { faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
 import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import React, { FC } from 'react';
 
 // Make FontAwesome Icon available to use.
+library.add(faLinkedinIn);
 library.add(faLocationDot);
 
 /**
@@ -23,6 +25,7 @@ interface CVProps {
     address: string;
     firstName: string;
     lastName: string;
+    linkedInLink: string;
     profile: string;
     title: string;
 }
@@ -32,7 +35,14 @@ interface CVProps {
  * @param param0 
  * @returns HTMLDivElement that contains CV Application.
  */
-const CV : FC<CVProps> = ({address, firstName, lastName, profile, title}) => {
+const CV : FC<CVProps> = ({
+        address, 
+        firstName, 
+        lastName, 
+        linkedInLink,
+        profile, 
+        title
+    }) => {
     return(
         <div className="cv-container">
             <div className="cv-header">
@@ -49,6 +59,10 @@ const CV : FC<CVProps> = ({address, firstName, lastName, profile, title}) => {
                 <div className="cv-details-row">
                     <FontAwesomeIcon icon={faLocationDot} className="icon"/>
                     <div>{address}</div>
+                </div>
+                <div className="cv-details-row">
+                    <FontAwesomeIcon icon={faLinkedinIn} className="icon"/>
+                    <div>{linkedInLink}</div>
                 </div>
             </div>
 
