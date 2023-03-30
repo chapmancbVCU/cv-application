@@ -4,7 +4,9 @@
 import React, { FC } from 'react';
 
 interface ApplicationProps {
+    details: string;
     firstName: string;
+    handleDetailsInput: any;
     handleFirstNameInput: any;
     handleLastNameInput: any;
     handleTitleInput: any;
@@ -13,7 +15,9 @@ interface ApplicationProps {
 }
 
 const Form : FC<ApplicationProps> = ({
-    firstName, 
+    details,
+    firstName,
+    handleDetailsInput, 
     handleFirstNameInput,
     handleLastNameInput,
     handleTitleInput,
@@ -27,8 +31,7 @@ const Form : FC<ApplicationProps> = ({
             <form className="cv-form">
                 <div className="form-row">
                     <label htmlFor="first-name">First Name</label>
-                    <input 
-                        id="first-name" 
+                    <input id="first-name" 
                         name="first-name" 
                         type="text"
                         minLength={5}
@@ -39,8 +42,7 @@ const Form : FC<ApplicationProps> = ({
                 </div>
                 <div className="form-row">
                     <label htmlFor="last-name">Last Name</label>
-                    <input 
-                        id="last-name" 
+                    <input id="last-name" 
                         name="last-name" 
                         type="text"
                         minLength={5}
@@ -51,8 +53,7 @@ const Form : FC<ApplicationProps> = ({
                 </div>
                 <div className="form-row">
                     <label htmlFor="title">Title</label>
-                    <input 
-                        id="title" 
+                    <input id="title" 
                         name="title" 
                         type="text"
                         minLength={5}
@@ -61,7 +62,17 @@ const Form : FC<ApplicationProps> = ({
                         onChange={(event) => handleTitleInput(event)}
                         value={title}/>
                 </div>
-                
+                <div className="form-row">
+                    <label htmlFor="details">Details</label>
+                    <textarea id="details" 
+                        name="details"
+                        minLength={5}
+                        maxLength={300}
+                        required
+                        onChange={(event) => handleDetailsInput(event)}
+                        value={details}>
+                    </textarea>
+                </div>
             </form>
         </div>
     );
