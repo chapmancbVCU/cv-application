@@ -26,6 +26,7 @@ interface ApplicationProps {
     lastName: string;
     linkedInLink: string;
     phone: string;
+    phoneNumberFormatter: any;
     profile: string;
     title: string;
 }
@@ -47,6 +48,7 @@ const Form : FC<ApplicationProps> = ({
         handleTitleInput,
         lastName,
         linkedInLink,
+        phoneNumberFormatter,
         phone,
         profile,
         title
@@ -114,10 +116,14 @@ const Form : FC<ApplicationProps> = ({
                     <label htmlFor="phone">Phone Number</label>
                     <input id="phone" 
                         name="phone" 
-                        type="text"
-                        minLength={5}
+                        type="tel"
+                        pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                        minLength={12}
+                        maxLength={12}
+                        placeholder="ex: 123-456-7890"
                         required
                         onChange={(event) => handlePhoneNumberInput(event)}
+                        onKeyDown={(event) => phoneNumberFormatter(event)}
                         value={phone}/>
                 </div>
                 <div className="form-row">

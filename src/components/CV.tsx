@@ -50,7 +50,7 @@ const CV : FC<CVProps> = ({
     return(
         <div className="cv-container">
             <div className="cv-header">
-                <img className="cv-photo"></img>
+                <img className="cv-photo" alt="Profile"></img>
                 <div className="name-title">
                     <div className="cv-header-text cv-name">{firstName}</div>
                     <div className="cv-header-text cv-name"> {lastName}</div>

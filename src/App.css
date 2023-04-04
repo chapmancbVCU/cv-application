@@ -76,7 +76,8 @@ body {
   flex-direction: column;
 }
 
-.form-row input[type='text'] {
+.form-row input[type='text'],
+.form-row input[type='tel'] {
   background-color: #FFFFFF;
   border: solid 1px #D6D9DC;
   border-radius: 3px;
@@ -168,7 +169,8 @@ h2 {
     align-items: flex-start; /* To avoid stretching */
     margin-bottom: 20px;
   }
-  .form-row input[type='text'] {
+  .form-row input[type='text'],
+  .form-row input[type='tel'] {
     height: initial;
     flex-grow: 1;
   }
