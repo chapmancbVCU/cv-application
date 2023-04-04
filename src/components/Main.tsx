@@ -46,8 +46,8 @@ function Main() {
         // Clean the input for any non-digit values.
         const phoneNumber = value.replace(/[^\d]/g, '');
     
-        /* phoneNumberLength is used to know when to apply or formatting for the
-           phone number. */
+        /* phoneNumberLength is used to know when to apply or formatting for 
+           the phone number. */
         const phoneNumberLength = phoneNumber.length;
     
         /* We need to return the value with no formatting if its less than four
@@ -71,6 +71,11 @@ function Main() {
         )}-${phoneNumber.slice(6,9)}`;
     }
 
+    /**
+     * Event handler that updates value of address when input is detected.
+     * @param event The event provided by onChange.
+     * @memberof Main
+     */
     function handleAddressInput(event: any) {
         setAddress(event.target.value);
     }
@@ -84,22 +89,49 @@ function Main() {
         setFirstName(event.target.value);
     }
 
+    /**
+     * Event handler that updates value of lastName when input is detected.
+     * @param event The event provided by onChange.
+     * @memberof Main
+     */
     function handleLastNameInput(event: any) {
         setLastName(event.target.value);
     }
 
+    /**
+     * Event handler that updates value for Linked In URL when input is 
+     * detected.
+     * @param event The event provided by onChange.
+     * @memberof Main
+     */
     function handleLinkedInLink(event: any) {
         setLinkedInLink(event.target.value);
     }
 
+    /**
+     * Event handler that updates value of phone number when input is detected.
+     * @param event The event provided by onChange.
+     * @memberof Main
+     */
     function handlePhoneNumberInput(event: any) {
         setPhoneNumber(event.target.value);
     }
 
+    /**
+     * Event handler that updates value of profile details when input is 
+     * detected.
+     * @param event The event provided by onChange.
+     * @memberof Main
+     */
     function handleProfileInput(event: any) {
         setProfile(event.target.value);
     }
 
+    /**
+     * Event handler that updates value of CV title when input is detected.
+     * @param event The event provided by onChange.
+     * @memberof Main
+     */
     function handleTitleInput(event: any) {
         setTitle(event.target.value);
     }
