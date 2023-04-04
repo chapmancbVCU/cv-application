@@ -28,6 +28,7 @@ interface CVProps {
     firstName: string;
     lastName: string;
     linkedInLink: string;
+    phone: string;
     profile: string;
     title: string;
 }
@@ -42,6 +43,7 @@ const CV : FC<CVProps> = ({
         firstName, 
         lastName, 
         linkedInLink,
+        phone,
         profile, 
         title
     }) => {
@@ -68,6 +70,7 @@ const CV : FC<CVProps> = ({
                 </div>
                 <div className="cv-details-row">
                     <FontAwesomeIcon icon={faMobileScreen} className="icon"/>
+                    <div>{phone}</div>
                 </div>
                 <div className="cv-details-row">
                 <FontAwesomeIcon icon={faEnvelope} className="icon"/>

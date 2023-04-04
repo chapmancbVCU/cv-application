@@ -22,6 +22,7 @@ function Main() {
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
     const [linkedInLink, setLinkedInLink] = useState("");
+    const [phone, setPhoneNumber] = useState("");
     const [profile, setProfile] = useState("");
     const [title, setTitle] = useState("");
 
@@ -46,6 +47,10 @@ function Main() {
         setLinkedInLink(event.target.value);
     }
 
+    function handlePhoneNumberInput(event: any) {
+        setPhoneNumber(event.target.value);
+    }
+
     function handleProfileInput(event: any) {
         setProfile(event.target.value);
     }
@@ -63,10 +68,12 @@ function Main() {
                 handleFirstNameInput={handleFirstNameInput}
                 handleLastNameInput={handleLastNameInput}
                 handleLinkedInLink={handleLinkedInLink}
+                handlePhoneNumberInput={handlePhoneNumberInput}
                 handleProfileInput={handleProfileInput}
                 handleTitleInput={handleTitleInput}
                 lastName={lastName} 
                 linkedInLink={linkedInLink}
+                phone={phone}
                 profile={profile}
                 title={title} 
             />
@@ -74,6 +81,7 @@ function Main() {
                 firstName={firstName} 
                 lastName={lastName}
                 linkedInLink={linkedInLink}
+                phone={phone}
                 profile={profile}
                 title={title}
             />

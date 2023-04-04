@@ -20,10 +20,12 @@ interface ApplicationProps {
     handleFirstNameInput: any;
     handleLastNameInput: any;
     handleLinkedInLink: any;
+    handlePhoneNumberInput: any;
     handleProfileInput: any;
     handleTitleInput: any;
     lastName: string;
     linkedInLink: string;
+    phone: string;
     profile: string;
     title: string;
 }
@@ -40,10 +42,12 @@ const Form : FC<ApplicationProps> = ({
         handleFirstNameInput,
         handleLastNameInput,
         handleLinkedInLink,
+        handlePhoneNumberInput,
         handleProfileInput, 
         handleTitleInput,
         lastName,
         linkedInLink,
+        phone,
         profile,
         title
     }) => { 
@@ -105,6 +109,16 @@ const Form : FC<ApplicationProps> = ({
                         required
                         onChange={(event) => handleLinkedInLink(event)}
                         value={linkedInLink}/>
+                </div>
+                <div className="form-row">
+                    <label htmlFor="phone">Phone Number</label>
+                    <input id="phone" 
+                        name="phone" 
+                        type="text"
+                        minLength={5}
+                        required
+                        onChange={(event) => handlePhoneNumberInput(event)}
+                        value={phone}/>
                 </div>
                 <div className="form-row">
                     <label htmlFor="profile">Details</label>
