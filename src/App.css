@@ -86,6 +86,18 @@ body {
   font-size: 14px;
 }
 
+.form-row input[type='text']:invalid,
+.form-row input[type='tel']:invalid {
+  border: 1px solid #D55C5F;
+  color: #D55C5F;
+  box-shadow: none;   /* Remove default red glow in Firefox. */
+}
+
+.form-row input[type='text']:valid,
+.form-row input[type='tel']:valid {
+  border-color: green;
+}
+
 .form-row textarea {
   font-family: "Helvetica", "Arial", sans-serif;
   font-size: 14px;
