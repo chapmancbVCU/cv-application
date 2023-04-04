@@ -80,6 +80,11 @@ function Main() {
         setAddress(event.target.value);
     }
 
+    /**
+     * Event handler that updates value of E-mail address when input is 
+     * detected.
+     * @param event The event provided by onChange.
+     */
     function handleEmailInput(event: any) {
         setEmail(event.target.value);
     }
