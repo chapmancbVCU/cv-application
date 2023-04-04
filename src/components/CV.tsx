@@ -25,6 +25,7 @@ library.add(faMobileScreen);
  */
 interface CVProps {
     address: string;
+    email: string;
     firstName: string;
     lastName: string;
     linkedInLink: string;
@@ -40,6 +41,7 @@ interface CVProps {
  */
 const CV : FC<CVProps> = ({
         address, 
+        email,
         firstName, 
         lastName, 
         linkedInLink,
@@ -73,7 +75,8 @@ const CV : FC<CVProps> = ({
                     <div>{phone}</div>
                 </div>
                 <div className="cv-details-row">
-                <FontAwesomeIcon icon={faEnvelope} className="icon"/>
+                    <FontAwesomeIcon icon={faEnvelope} className="icon"/>
+                    <div>{email}</div>
                 </div>
             </div>
 

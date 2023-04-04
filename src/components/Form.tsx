@@ -15,8 +15,10 @@ import React, { FC } from 'react';
  */
 interface ApplicationProps {
     address: string;
+    email: string;
     firstName: string;
     handleAddressInput: any;
+    handleEmailInput: any;
     handleFirstNameInput: any;
     handleLastNameInput: any;
     handleLinkedInLink: any;
@@ -39,7 +41,9 @@ interface ApplicationProps {
 const Form : FC<ApplicationProps> = ({
         address,
         firstName,
+        email,
         handleAddressInput,
+        handleEmailInput,
         handleFirstNameInput,
         handleLastNameInput,
         handleLinkedInLink,
@@ -125,6 +129,16 @@ const Form : FC<ApplicationProps> = ({
                         onChange={(event) => handlePhoneNumberInput(event)}
                         onKeyDown={(event) => phoneNumberFormatter(event)}
                         value={phone}/>
+                </div>
+                <div className="form-row">
+                    <label htmlFor="email">E-mail</label>
+                    <input id="email" 
+                        name="email" 
+                        type="email"
+                        placeholder="joe@example.com"
+                        required
+                        onChange={(event) => handleEmailInput(event)}
+                        value={email}/>
                 </div>
                 <div className="form-row">
                     <label htmlFor="profile">Details</label>

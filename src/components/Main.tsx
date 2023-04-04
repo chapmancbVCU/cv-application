@@ -19,6 +19,7 @@ import React, { useState } from 'react';
  */
 function Main() {
     const [address, setAddress] = useState("");
+    const [email, setEmail] = useState("");
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
     const [linkedInLink, setLinkedInLink] = useState("");
@@ -74,16 +75,18 @@ function Main() {
     /**
      * Event handler that updates value of address when input is detected.
      * @param event The event provided by onChange.
-     * @memberof Main
      */
     function handleAddressInput(event: any) {
         setAddress(event.target.value);
     }
 
+    function handleEmailInput(event: any) {
+        setEmail(event.target.value);
+    }
+
     /**
      * Event handler that updates value of firstName when input is detected.
      * @param event The event provided by onChange.
-     * @memberof Main
      */
     function handleFirstNameInput(event: any) {
         setFirstName(event.target.value);
@@ -92,7 +95,6 @@ function Main() {
     /**
      * Event handler that updates value of lastName when input is detected.
      * @param event The event provided by onChange.
-     * @memberof Main
      */
     function handleLastNameInput(event: any) {
         setLastName(event.target.value);
@@ -102,7 +104,6 @@ function Main() {
      * Event handler that updates value for Linked In URL when input is 
      * detected.
      * @param event The event provided by onChange.
-     * @memberof Main
      */
     function handleLinkedInLink(event: any) {
         setLinkedInLink(event.target.value);
@@ -111,7 +112,6 @@ function Main() {
     /**
      * Event handler that updates value of phone number when input is detected.
      * @param event The event provided by onChange.
-     * @memberof Main
      */
     function handlePhoneNumberInput(event: any) {
         setPhoneNumber(event.target.value);
@@ -121,7 +121,6 @@ function Main() {
      * Event handler that updates value of profile details when input is 
      * detected.
      * @param event The event provided by onChange.
-     * @memberof Main
      */
     function handleProfileInput(event: any) {
         setProfile(event.target.value);
@@ -130,7 +129,6 @@ function Main() {
     /**
      * Event handler that updates value of CV title when input is detected.
      * @param event The event provided by onChange.
-     * @memberof Main
      */
     function handleTitleInput(event: any) {
         setTitle(event.target.value);
@@ -152,9 +150,11 @@ function Main() {
         <div className="main">
             <Form
                 address={address} 
+                email={email}
                 firstName={firstName}
                 handleAddressInput={handleAddressInput}
                 handleFirstNameInput={handleFirstNameInput}
+                handleEmailInput={handleEmailInput}
                 handleLastNameInput={handleLastNameInput}
                 handleLinkedInLink={handleLinkedInLink}
                 handlePhoneNumberInput={handlePhoneNumberInput}
@@ -168,6 +168,7 @@ function Main() {
                 title={title} 
             />
             <CV address={address}
+                email={email}
                 firstName={firstName} 
                 lastName={lastName}
                 linkedInLink={linkedInLink}
