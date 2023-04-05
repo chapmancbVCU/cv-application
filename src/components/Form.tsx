@@ -110,7 +110,7 @@ const Form : FC<ApplicationProps> = ({
                     <label htmlFor="linked-in">LinkedIn</label>
                     <input id="linked-in" 
                         name="linked-in" 
-                        type="text"
+                        type="url"
                         minLength={5}
                         required
                         onChange={(event) => handleLinkedInLink(event)}
