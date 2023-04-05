@@ -7,7 +7,7 @@ import Main from './components/Main';
 import React, { Component } from 'react';
 
 /**
- * @class Main entrypoint of page after index.js
+ * @class Main entry point of page after index.js
  * @author Chad Chapman
  * @extends Component
  */

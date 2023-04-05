@@ -78,7 +78,8 @@ body {
 
 .form-row input[type='text'],
 .form-row input[type='tel'],
-.form-row input[type='email'] {
+.form-row input[type='email'],
+.form-row input[type='url'] {
   background-color: #FFFFFF;
   border: solid 1px #D6D9DC;
   border-radius: 3px;
@@ -89,7 +90,8 @@ body {
 
 .form-row input[type='text']:invalid,
 .form-row input[type='tel']:invalid,
-.form-row input[type='email']:invalid {
+.form-row input[type='email']:invalid,
+.form-row input[type='url']:invalid {
   border: 1px solid #D55C5F;
   color: #D55C5F;
   box-shadow: none;   /* Remove default red glow in Firefox. */
@@ -97,7 +99,8 @@ body {
 
 .form-row input[type='text']:valid,
 .form-row input[type='tel']:valid,
-.form-row input[type='email']:valid {
+.form-row input[type='email']:valid,
+.form-row input[type='url']:valid {
   border-color: green;
 }
 
