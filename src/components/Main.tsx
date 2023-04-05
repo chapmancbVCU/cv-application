@@ -41,7 +41,8 @@ function Main() {
      * @returns The properly formatted string based on length.
      */
     function formatPhoneNumber(value: string): string {
-        // If input is falsy eg if the suer delets the input, then just return.
+        /* If input is falsy eg if the user deletes the input, then just 
+           return. */
         if(!value) return value;
     
         // Clean the input for any non-digit values.
