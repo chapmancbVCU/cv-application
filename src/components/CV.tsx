@@ -31,6 +31,7 @@ interface CVProps {
     linkedInLink: string;
     phone: string;
     profile: string;
+    profileImage: any;
     title: string;
 }
 
@@ -47,12 +48,14 @@ const CV : FC<CVProps> = ({
         linkedInLink,
         phone,
         profile, 
+        profileImage,
         title
     }) => {
     return(
         <div className="cv-container">
             <div className="cv-header">
-                <img className="cv-photo" alt="Profile"></img>
+                <img className="cv-photo" alt="Profile" 
+                    src={profileImage === null ? "" : URL.createObjectURL(profileImage)} />
                 <div className="name-title">
                     <div className="cv-header-text cv-name">{firstName}</div>
                     <div className="cv-header-text cv-name"> {lastName}</div>

@@ -30,7 +30,9 @@ interface ApplicationProps {
     phone: string;
     phoneNumberFormatter: any;
     profile: string;
+    profileImage: any;
     title: string;
+    uploadFile: any;
 }
 
 /**
@@ -40,8 +42,8 @@ interface ApplicationProps {
  */
 const Form : FC<ApplicationProps> = ({
         address,
-        firstName,
         email,
+        firstName,
         handleAddressInput,
         handleEmailInput,
         handleFirstNameInput,
@@ -55,7 +57,9 @@ const Form : FC<ApplicationProps> = ({
         phoneNumberFormatter,
         phone,
         profile,
-        title
+        profileImage,
+        title,
+        uploadFile
     }) => { 
         
     return(
@@ -150,6 +154,13 @@ const Form : FC<ApplicationProps> = ({
                         onChange={(event) => handleProfileInput(event)}
                         value={profile}>
                     </textarea>
+                </div>
+                <div className="form-row">
+                    <label htmlFor="profile-image">Upload Profile Image</label>
+                    <input id="profile-image"
+                        name="profile-image"
+                        type="file"
+                        onChange={(event) => uploadFile(event)}/>
                 </div>
             </form>
         </div>

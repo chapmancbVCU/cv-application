@@ -10,7 +10,7 @@
  *****************************************************************************/
 import CV from './CV';
 import Form from './Form';
-import React, { useState } from 'react';
+import React, { ChangeEvent, useRef, useState } from 'react';
 
 /**
  * Renders and manages hooks for the Form and CV Application child components.
@@ -25,6 +25,7 @@ function Main() {
     const [linkedInLink, setLinkedInLink] = useState("");
     const [phone, setPhoneNumber] = useState("");
     const [profile, setProfile] = useState("");
+    const [profileImage, setProfileImage] = useState<File | null>(null);
     const [title, setTitle] = useState("");
 
     /**
@@ -152,6 +153,14 @@ function Main() {
         event.target.value = formattedInputValue;
     }
 
+    const uploadFile = (event: ChangeEvent<HTMLInputElement>) => {
+        //event.preventDefault();
+
+        if(!event.target.files) return;
+        console.log(`{event.target.files[0]}`)
+        setProfileImage(event.target.files[0]);
+    }
+
     return(
         <div className="main">
             <Form
@@ -171,7 +180,9 @@ function Main() {
                 phone={phone}
                 phoneNumberFormatter={phoneNumberFormatter}
                 profile={profile}
+                profileImage={profileImage}
                 title={title} 
+                uploadFile={uploadFile}
             />
             <CV address={address}
                 email={email}
@@ -180,6 +191,7 @@ function Main() {
                 linkedInLink={linkedInLink}
                 phone={phone}
                 profile={profile}
+                profileImage={profileImage}
                 title={title}
             />
         </div>
