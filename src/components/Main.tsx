@@ -153,11 +153,15 @@ function Main() {
         event.target.value = formattedInputValue;
     }
 
-    const uploadFile = (event: ChangeEvent<HTMLInputElement>) => {
-        //event.preventDefault();
-
-        if(!event.target.files) return;
-        console.log(`{event.target.files[0]}`)
+    /**
+     * Handles preview of profile image on CV application.
+     * @param event onChange event when user clicks Choose File button
+     * @returns void
+     */
+    function uploadFile(event: ChangeEvent<HTMLInputElement>) {
+        if(!event.target.files) {
+            return;
+        }
         setProfileImage(event.target.files[0]);
     }
 

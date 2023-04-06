@@ -164,8 +164,7 @@ const Form : FC<ApplicationProps> = ({
                 </div>
             </form>
         </div>
-    );
-    
+    );   
 }
 
 export default Form;
