@@ -7,6 +7,7 @@
 /******************************************************************************
  * IMPORTS                                                                    *
  *****************************************************************************/
+import AccountImage from "../images/account.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
@@ -19,6 +20,7 @@ library.add(faEnvelope);
 library.add(faLinkedinIn);
 library.add(faLocationDot);
 library.add(faMobileScreen);
+
 /**
  * @interface CVProps The interface that describes variables associated with 
  * props of the CV component.
@@ -36,6 +38,14 @@ interface CVProps {
     profileImage: any;
     position: string;
     title: string;
+}
+
+/**
+ * Displays default image when profile image has not yet been selected.
+ * @param event When no image is selected.
+ */
+function addDefaultSrc(event: any) {
+    event.target.src = AccountImage;
 }
 
 /**
@@ -57,11 +67,13 @@ const CV : FC<CVProps> = ({
         position,
         title
     }) => {
+
     return(
         <div className="cv-container">
             <div className="cv-header">
                 <img className="cv-photo" alt="Profile" 
-                    src={profileImage === null ? "" : URL.createObjectURL(profileImage)} />
+                    src={profileImage === null ? "" : URL.createObjectURL(profileImage)} 
+                    onError={addDefaultSrc}/>
                 <div className="name-title">
                     <div className="cv-header-text cv-name">{firstName}</div>
                     <div className="cv-header-text cv-name"> {lastName}</div>
