@@ -84,8 +84,12 @@ const CV : FC<CVProps> = ({
             </div>
 
             <div className="cv-profile">
-            <div className="section-label profile-label">Profile</div>
+                <div className="section-label profile-label">Profile</div>
                 <div className="profile">{profile}</div>
+            </div>
+
+            <div className="employment-history">
+                <div className="section-label employment-label">Employment History</div>
             </div>
         </div>
     );
