@@ -30,7 +30,8 @@ interface ApplicationProps {
     phone: string;
     phoneNumberFormatter: any;
     profile: string;
-    profileImage: any;
+    position: string;
+    positionInput: any;
     title: string;
     uploadFile: any;
 }
@@ -56,8 +57,9 @@ const Form : FC<ApplicationProps> = ({
         linkedInLink,
         phoneNumberFormatter,
         phone,
+        position,
+        positionInput,
         profile,
-        profileImage,
         title,
         uploadFile
     }) => { 
@@ -163,6 +165,16 @@ const Form : FC<ApplicationProps> = ({
                         onChange={(event) => uploadFile(event)}/>
                 </div>
                 <h3>Experience</h3>
+                <div className="form-row">
+                    <label htmlFor="position">Position</label>
+                    <input id="position"
+                        name="position"
+                        type="text"
+                        placeholder="Accountant"
+                        required
+                        onChange={(event) => positionInput(event)}
+                        value={position}/>
+                </div>
             </form>
         </div>
     );   

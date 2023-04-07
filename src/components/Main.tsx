@@ -26,6 +26,7 @@ function Main() {
     const [phone, setPhoneNumber] = useState("");
     const [profile, setProfile] = useState("");
     const [profileImage, setProfileImage] = useState<File | null>(null);
+    const [position, setPosition] = useState("");
     const [title, setTitle] = useState("");
 
     /**
@@ -153,6 +154,9 @@ function Main() {
         event.target.value = formattedInputValue;
     }
 
+    function positionInput(event: any) {
+        setPosition(event.target.value);
+    }
     /**
      * Handles preview of profile image on CV application.
      * @param event onChange event when user clicks Choose File button
@@ -184,7 +188,8 @@ function Main() {
                 phone={phone}
                 phoneNumberFormatter={phoneNumberFormatter}
                 profile={profile}
-                profileImage={profileImage}
+                position={position}
+                positionInput={positionInput}
                 title={title} 
                 uploadFile={uploadFile}
             />
