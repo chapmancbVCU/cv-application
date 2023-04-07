@@ -30,7 +30,6 @@ body {
 }
 
 .cv-details-row {
-  margin-left: 15px;
   margin-bottom: 10px;
   display: flex;
   flex-direction: row;
@@ -175,10 +174,6 @@ h3 {
   flex-grow: 1;
 }
 
-.profile, .position-info {
-  margin-left: 15px;
-}
-
 .profile-label {
   width: 60px;
   text-align: center;
@@ -189,7 +184,6 @@ h3 {
   color: white;
   margin-top: 15px;
   margin-bottom: 10px;
-  margin-left: 15px;
 }
 
 @media only screen and (min-width: 1000px) {
