@@ -15,7 +15,7 @@ import { faEnvelope, faLocationDot, faMobileScreen }
     from "@fortawesome/free-solid-svg-icons";
 import React, { FC } from 'react';
 
-// Make FontAwesome Icon available to use.
+// Make FontAwesome Icons available for use.
 library.add(faEnvelope);
 library.add(faLinkedinIn);
 library.add(faLocationDot);

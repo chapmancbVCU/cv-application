@@ -163,9 +163,7 @@ h3 {
   background-color: #EAEDF0;
   display: flex;
   flex-direction: column;
-
   justify-content: center;
-
 }
 
 .name-title {
@@ -193,6 +191,7 @@ h3 {
   }
 
   .main {
+    align-items: flex-start;
     flex-direction: row;
     justify-content: space-evenly;
   }
