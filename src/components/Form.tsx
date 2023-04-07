@@ -162,6 +162,7 @@ const Form : FC<ApplicationProps> = ({
                         type="file"
                         onChange={(event) => uploadFile(event)}/>
                 </div>
+                <h3>Experience</h3>
             </form>
         </div>
     );   
