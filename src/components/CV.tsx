@@ -92,7 +92,7 @@ const CV : FC<CVProps> = ({
 
             <div className="employment-history">
                 <div className="section-label employment-label">Employment History</div>
-                <div>{position}</div>
+                <div className="position-info">{position}</div>
             </div>
         </div>
     );

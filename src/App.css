@@ -168,7 +168,7 @@ h3 {
   flex-grow: 1;
 }
 
-.profile {
+.profile, .position-info {
   margin-left: 15px;
 }
 
