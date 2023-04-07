@@ -32,6 +32,7 @@ interface CVProps {
     phone: string;
     profile: string;
     profileImage: any;
+    position: string;
     title: string;
 }
 
@@ -49,6 +50,7 @@ const CV : FC<CVProps> = ({
         phone,
         profile, 
         profileImage,
+        position,
         title
     }) => {
     return(
@@ -90,6 +92,7 @@ const CV : FC<CVProps> = ({
 
             <div className="employment-history">
                 <div className="section-label employment-label">Employment History</div>
+                <div>{position}</div>
             </div>
         </div>
     );

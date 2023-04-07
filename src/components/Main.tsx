@@ -157,6 +157,7 @@ function Main() {
     function positionInput(event: any) {
         setPosition(event.target.value);
     }
+
     /**
      * Handles preview of profile image on CV application.
      * @param event onChange event when user clicks Choose File button
@@ -201,6 +202,7 @@ function Main() {
                 phone={phone}
                 profile={profile}
                 profileImage={profileImage}
+                position={position}
                 title={title}
             />
         </div>
