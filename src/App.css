@@ -10,12 +10,16 @@ body {
   line-height: 1.3;
 }
 
+.cv-container {
+  background-color: white;
+}
 .cv-container, .form-container {
   margin: 25px auto;
   width: 90%;
   border: solid 1px grey;
   border-radius: 3px;
 }
+
 
 .cv-details,
 .cv-profile,
@@ -62,6 +66,7 @@ body {
 .cv-photo {
   height: 150px;
   width: 125px;
+  background-color: #EAEDF0;
 }
 
 .details {
