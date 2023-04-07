@@ -13,13 +13,13 @@ body {
 .cv-container {
   background-color: white;
 }
+
 .cv-container, .form-container {
   margin: 25px auto;
   width: 90%;
   border: solid 1px grey;
   border-radius: 3px;
 }
-
 
 .cv-details,
 .cv-profile,
@@ -161,7 +161,6 @@ h3 {
 }
 
 .main {
-  color: #5D6063;
   background-color: #EAEDF0;
   display: flex;
   flex-direction: column;
