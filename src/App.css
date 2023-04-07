@@ -22,6 +22,7 @@ body {
 .employment-history {
   margin-top: 25px;
   margin-left: 35px;
+  margin-right: 35px;
 }
 
 .cv-details-row {
@@ -59,8 +60,8 @@ body {
 }
 
 .cv-photo {
-  height: 175px;
-  width: 150px;
+  height: 150px;
+  width: 125px;
 }
 
 .details {
