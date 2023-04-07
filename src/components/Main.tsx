@@ -13,6 +13,52 @@ import Form from './Form';
 import React, { ChangeEvent, useState } from 'react';
 
 /**
+ * Function that receives number as an input and formats it based on the 
+ * length.  For strings less than three it does nothing. For values less 
+ * than 7 you get a formatted string that looks like xxx-xxx.  If the 
+ * input string is more than 7 then the formatted string looks like 
+ * xxx-xxx-xx.  Client side validation is recommened as well.  
+ * 
+ * Do not call this function directly within the html file.  The 
+ * phoneNumberFormatter function will be used to call this function in 
+ * order to set the correct format.
+ * @param {string} value the string of numbers
+ * @returns The properly formatted string based on length.
+ */
+function formatPhoneNumber(value: string): string {
+    /* If input is falsy eg if the user deletes the input, then just 
+       return. */
+    if(!value) return value;
+
+    // Clean the input for any non-digit values.
+    const phoneNumber = value.replace(/[^\d]/g, '');
+
+    /* phoneNumberLength is used to know when to apply or formatting for 
+       the phone number. */
+    const phoneNumberLength = phoneNumber.length;
+
+    /* We need to return the value with no formatting if its less than four
+       digits.  This is to avoid weird behavior that occurs if you format
+       the area code too early. */
+    if(phoneNumberLength < 4) {
+        return phoneNumber;
+    }
+
+    /* If phoneNumberLength is greater than 4 and less than 7 we start to
+       return the formatted number. */
+    if(phoneNumberLength < 7) {
+        return `${phoneNumber.slice(0,3)}-${phoneNumber.slice(3)}`;
+    }
+
+    /* Finally, if the phoneNumberLength is greater than seven, we add the 
+       last bit of formatting and return it. */
+    return `${phoneNumber.slice(0,3)}-${phoneNumber.slice(
+        3,
+        6,
+    )}-${phoneNumber.slice(6,9)}`;
+}
+
+/**
  * Renders and manages hooks for the Form and CV Application child components.
  * @returns HTMLDivElement that contains the Form and CV Application 
  * components.
@@ -32,52 +78,6 @@ function Main() {
     const [title, setTitle] = useState("");
 
     /**
-     * Function that receives number as an input and formats it based on the 
-     * length.  For strings less than three it does nothing. For values less 
-     * than 7 you get a formatted string that looks like xxx-xxx.  If the 
-     * input string is more than 7 then the formatted string looks like 
-     * xxx-xxx-xx.  Client side validation is recommened as well.  
-     * 
-     * Do not call this function directly within the html file.  The 
-     * phoneNumberFormatter function will be used to call this function in 
-     * order to set the correct format.
-     * @param {string} value the string of numbers
-     * @returns The properly formatted string based on length.
-     */
-    function formatPhoneNumber(value: string): string {
-        /* If input is falsy eg if the user deletes the input, then just 
-           return. */
-        if(!value) return value;
-    
-        // Clean the input for any non-digit values.
-        const phoneNumber = value.replace(/[^\d]/g, '');
-    
-        /* phoneNumberLength is used to know when to apply or formatting for 
-           the phone number. */
-        const phoneNumberLength = phoneNumber.length;
-    
-        /* We need to return the value with no formatting if its less than four
-           digits.  This is to avoid weird behavior that occurs if you format
-           the area code too early. */
-        if(phoneNumberLength < 4) {
-            return phoneNumber;
-        }
-    
-        /* If phoneNumberLength is greater than 4 and less than 7 we start to
-           return the formatted number. */
-        if(phoneNumberLength < 7) {
-            return `${phoneNumber.slice(0,3)}-${phoneNumber.slice(3)}`;
-        }
-    
-        /* Finally, if the phoneNumberLength is greater than seven, we add the 
-           last bit of formatting and return it. */
-        return `${phoneNumber.slice(0,3)}-${phoneNumber.slice(
-            3,
-            6,
-        )}-${phoneNumber.slice(6,9)}`;
-    }
-
-    /**
      * Event handler that updates value of address when input is detected.
      * @param event The event provided by onChange.
      */
@@ -94,10 +94,20 @@ function Main() {
         setEmail(event.target.value);
     }
 
+    /**
+     * Event handler that updates value of employer name when input is 
+     * detected.
+     * @param event The event provided by onChange.
+     */
     function handleEmployerInput(event: any) {
         setEmployer(event.target.value);
     }
 
+    /**
+     * Event handler that updates value of employer location details when 
+     * input is detected.
+     * @param event The event provided by onChange.
+     */
     function handleEmployerLocationInput(event: any) {
         setEmployerLocation(event.target.value);
     }
@@ -144,6 +154,11 @@ function Main() {
         setProfile(event.target.value);
     }
 
+    /**
+     * Event handler that updates value of position title when input is 
+     * detected.
+     * @param event The event provided by onChange.
+     */
     function handlePositionInput(event: any) {
         setPosition(event.target.value);
     }
@@ -222,8 +237,7 @@ function Main() {
                 title={title}
             />
         </div>
-    );
-    
+    ); 
 }
 
 export default Main;
