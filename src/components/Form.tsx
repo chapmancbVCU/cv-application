@@ -16,14 +16,17 @@ import React, { FC } from 'react';
 interface ApplicationProps {
     address: string;
     email: string;
+    employer: string;
     firstName: string;
     handleAddressInput: any;
     handleEmailInput: any;
+    handleEmployerInput: any;
     handleFirstNameInput: any;
     handleLastNameInput: any;
     handleLinkedInLink: any;
     handlePhoneNumberInput: any;
     handleProfileInput: any;
+    handlePositionInput: any;
     handleTitleInput: any;
     lastName: string;
     linkedInLink: string;
@@ -31,7 +34,6 @@ interface ApplicationProps {
     phoneNumberFormatter: any;
     profile: string;
     position: string;
-    positionInput: any;
     title: string;
     uploadFile: any;
 }
@@ -44,21 +46,23 @@ interface ApplicationProps {
 const Form : FC<ApplicationProps> = ({
         address,
         email,
+        employer,
         firstName,
         handleAddressInput,
         handleEmailInput,
+        handleEmployerInput,
         handleFirstNameInput,
         handleLastNameInput,
         handleLinkedInLink,
         handlePhoneNumberInput,
-        handleProfileInput, 
+        handleProfileInput,
+        handlePositionInput,
         handleTitleInput,
         lastName,
         linkedInLink,
         phoneNumberFormatter,
         phone,
         position,
-        positionInput,
         profile,
         title,
         uploadFile
@@ -180,8 +184,20 @@ const Form : FC<ApplicationProps> = ({
                         minLength={5}
                         maxLength={25}
                         required
-                        onChange={(event) => positionInput(event)}
+                        onChange={(event) => handlePositionInput(event)}
                         value={position}/>
+                </div>
+                <div className="form-row">
+                    <label htmlFor="employer">Employer</label>
+                    <input id="employer"
+                        name="employer"
+                        type="text"
+                        placeholder="ACME"
+                        minLength={5}
+                        maxLength={25}
+                        required
+                        onChange={(event) => handleEmployerInput(event)}
+                        value={employer}/>
                 </div>
             </form>
         </div>

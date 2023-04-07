@@ -20,6 +20,7 @@ import React, { ChangeEvent, useRef, useState } from 'react';
 function Main() {
     const [address, setAddress] = useState("");
     const [email, setEmail] = useState("");
+    const [employer, setEmployer] = useState("");
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
     const [linkedInLink, setLinkedInLink] = useState("");
@@ -92,6 +93,10 @@ function Main() {
         setEmail(event.target.value);
     }
 
+    function handleEmployerInput(event: any) {
+        setEmployer(event.target.value);
+    }
+
     /**
      * Event handler that updates value of firstName when input is detected.
      * @param event The event provided by onChange.
@@ -134,6 +139,10 @@ function Main() {
         setProfile(event.target.value);
     }
 
+    function handlePositionInput(event: any) {
+        setPosition(event.target.value);
+    }
+
     /**
      * Event handler that updates value of CV title when input is detected.
      * @param event The event provided by onChange.
@@ -154,10 +163,6 @@ function Main() {
         event.target.value = formattedInputValue;
     }
 
-    function positionInput(event: any) {
-        setPosition(event.target.value);
-    }
-
     /**
      * Handles preview of profile image on CV application.
      * @param event onChange event when user clicks Choose File button
@@ -175,14 +180,17 @@ function Main() {
             <Form
                 address={address} 
                 email={email}
+                employer={employer}
                 firstName={firstName}
                 handleAddressInput={handleAddressInput}
                 handleFirstNameInput={handleFirstNameInput}
                 handleEmailInput={handleEmailInput}
+                handleEmployerInput={handleEmployerInput}
                 handleLastNameInput={handleLastNameInput}
                 handleLinkedInLink={handleLinkedInLink}
                 handlePhoneNumberInput={handlePhoneNumberInput}
                 handleProfileInput={handleProfileInput}
+                handlePositionInput={handlePositionInput}
                 handleTitleInput={handleTitleInput}
                 lastName={lastName} 
                 linkedInLink={linkedInLink}
@@ -190,12 +198,12 @@ function Main() {
                 phoneNumberFormatter={phoneNumberFormatter}
                 profile={profile}
                 position={position}
-                positionInput={positionInput}
                 title={title} 
                 uploadFile={uploadFile}
             />
             <CV address={address}
                 email={email}
+                employer={employer}
                 firstName={firstName} 
                 lastName={lastName}
                 linkedInLink={linkedInLink}

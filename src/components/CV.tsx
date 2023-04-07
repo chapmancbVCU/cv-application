@@ -26,6 +26,7 @@ library.add(faMobileScreen);
 interface CVProps {
     address: string;
     email: string;
+    employer: string;
     firstName: string;
     lastName: string;
     linkedInLink: string;
@@ -44,6 +45,7 @@ interface CVProps {
 const CV : FC<CVProps> = ({
         address, 
         email,
+        employer,
         firstName, 
         lastName, 
         linkedInLink,
@@ -92,7 +94,7 @@ const CV : FC<CVProps> = ({
 
             <div className="employment-history">
                 <div className="section-label employment-label">Employment History</div>
-                <div className="position-info">{position}</div>
+                <div className="position-info">{position}, {employer}</div>
             </div>
         </div>
     );
