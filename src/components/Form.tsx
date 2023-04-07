@@ -108,6 +108,7 @@ const Form : FC<ApplicationProps> = ({
                         name="address" 
                         type="text"
                         minLength={5}
+                        maxLength={75}
                         required
                         onChange={(event) => handleAddressInput(event)}
                         value={address}/>
@@ -171,6 +172,8 @@ const Form : FC<ApplicationProps> = ({
                         name="position"
                         type="text"
                         placeholder="Accountant"
+                        minLength={5}
+                        maxLength={25}
                         required
                         onChange={(event) => positionInput(event)}
                         value={position}/>
