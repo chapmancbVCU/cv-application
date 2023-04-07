@@ -17,10 +17,12 @@ interface ApplicationProps {
     address: string;
     email: string;
     employer: string;
+    employerLocation: string;
     firstName: string;
     handleAddressInput: any;
     handleEmailInput: any;
     handleEmployerInput: any;
+    handleEmployerLocationInput: any;
     handleFirstNameInput: any;
     handleLastNameInput: any;
     handleLinkedInLink: any;
@@ -47,10 +49,12 @@ const Form : FC<ApplicationProps> = ({
         address,
         email,
         employer,
+        employerLocation,
         firstName,
         handleAddressInput,
         handleEmailInput,
         handleEmployerInput,
+        handleEmployerLocationInput,
         handleFirstNameInput,
         handleLastNameInput,
         handleLinkedInLink,
@@ -160,7 +164,7 @@ const Form : FC<ApplicationProps> = ({
                     <textarea id="profile" 
                         name="profile"
                         minLength={5}
-                        maxLength={300}
+                        maxLength={500}
                         placeholder="Describe yourself in paragraph form..."
                         required
                         onChange={(event) => handleProfileInput(event)}
@@ -198,6 +202,18 @@ const Form : FC<ApplicationProps> = ({
                         required
                         onChange={(event) => handleEmployerInput(event)}
                         value={employer}/>
+                </div>
+                <div className="form-row">
+                    <label htmlFor="employer-location">Employer Location</label>
+                    <input id="employer-location"
+                        name="employer-location"
+                        type="text"
+                        placeholder="Llanfair­pwllgwyngyll­gogery­chwyrn­drobwll­llan­tysilio­gogo­goch, Wales"
+                        minLength={5}
+                        maxLength={80}
+                        required
+                        onChange={(event) => handleEmployerLocationInput(event)}
+                        value={employerLocation}/>
                 </div>
             </form>
         </div>

@@ -21,6 +21,7 @@ function Main() {
     const [address, setAddress] = useState("");
     const [email, setEmail] = useState("");
     const [employer, setEmployer] = useState("");
+    const [employerLocation, setEmployerLocation] = useState("");
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
     const [linkedInLink, setLinkedInLink] = useState("");
@@ -95,6 +96,10 @@ function Main() {
 
     function handleEmployerInput(event: any) {
         setEmployer(event.target.value);
+    }
+
+    function handleEmployerLocationInput(event: any) {
+        setEmployerLocation(event.target.value);
     }
 
     /**
@@ -181,11 +186,13 @@ function Main() {
                 address={address} 
                 email={email}
                 employer={employer}
+                employerLocation={employerLocation}
                 firstName={firstName}
                 handleAddressInput={handleAddressInput}
                 handleFirstNameInput={handleFirstNameInput}
                 handleEmailInput={handleEmailInput}
                 handleEmployerInput={handleEmployerInput}
+                handleEmployerLocationInput={handleEmployerLocationInput}
                 handleLastNameInput={handleLastNameInput}
                 handleLinkedInLink={handleLinkedInLink}
                 handlePhoneNumberInput={handlePhoneNumberInput}
@@ -204,6 +211,7 @@ function Main() {
             <CV address={address}
                 email={email}
                 employer={employer}
+                employerLocation={employerLocation}
                 firstName={firstName} 
                 lastName={lastName}
                 linkedInLink={linkedInLink}
