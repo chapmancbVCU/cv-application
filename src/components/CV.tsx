@@ -31,6 +31,7 @@ interface CVProps {
     email: string;
     employer: string;
     employerLocation: string;
+    endEmployment: string;
     firstName: string;
     lastName: string;
     linkedInLink: string;
@@ -60,6 +61,7 @@ const CV : FC<CVProps> = ({
         email,
         employer,
         employerLocation,
+        endEmployment,
         firstName, 
         lastName, 
         linkedInLink,
@@ -111,7 +113,7 @@ const CV : FC<CVProps> = ({
             <div className="employment-history">
                 <div className="section-label employment-label">Employment History</div>
                 <div>{position}, {employer}, {employerLocation}</div>
-                <div>{beginEmployment} - </div>
+                <div>{beginEmployment} - {endEmployment}</div>
             </div>
         </div>
     );

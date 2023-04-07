@@ -19,12 +19,14 @@ interface ApplicationProps {
     email: string;
     employer: string;
     employerLocation: string;
+    endEmployment: string
     firstName: string;
     handleAddressInput: any;
     handleBeginEmploymentDateInput: any;
     handleEmailInput: any;
     handleEmployerInput: any;
     handleEmployerLocationInput: any;
+    handleEndEmploymentDateInput: any;
     handleFirstNameInput: any;
     handleLastNameInput: any;
     handleLinkedInLink: any;
@@ -53,12 +55,14 @@ const Form : FC<ApplicationProps> = ({
         email,
         employer,
         employerLocation,
+        endEmployment,
         firstName,
         handleAddressInput,
         handleBeginEmploymentDateInput,
         handleEmailInput,
         handleEmployerInput,
         handleEmployerLocationInput,
+        handleEndEmploymentDateInput,
         handleFirstNameInput,
         handleLastNameInput,
         handleLinkedInLink,
@@ -222,7 +226,7 @@ const Form : FC<ApplicationProps> = ({
                 <div className="form-row">
                     <label htmlFor="begin-employment">Begin Employment</label>
                     <input id="begin-employment"
-                        name="beginEmployment"
+                        name="begin-employment"
                         type="text"
                         placeholder="September, 2020"
                         minLength={5}
@@ -230,6 +234,18 @@ const Form : FC<ApplicationProps> = ({
                         required
                         onChange={(event) => handleBeginEmploymentDateInput(event)}
                         value={beginEmployment}/>
+                </div>
+                <div className="form-row">
+                    <label htmlFor="end-employment">End Employment</label>
+                    <input id="end-employment"
+                        name="end-mployment"
+                        type="text"
+                        placeholder="December, 2022"
+                        minLength={5}
+                        maxLength={20}
+                        required
+                        onChange={(event) => handleEndEmploymentDateInput(event)}
+                        value={endEmployment}/>
                 </div>
             </form>
         </div>

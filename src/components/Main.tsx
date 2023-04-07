@@ -69,6 +69,7 @@ function Main() {
     const [email, setEmail] = useState("");
     const [employer, setEmployer] = useState("");
     const [employerLocation, setEmployerLocation] = useState("");
+    const [endEmployment, setEndEmploymentDate] = useState("");
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
     const [linkedInLink, setLinkedInLink] = useState("");
@@ -116,6 +117,9 @@ function Main() {
         setEmployerLocation(event.target.value);
     }
 
+    function handleEndEmploymentDateInput(event: any) {
+        setEndEmploymentDate(event.target.value);
+    }
     /**
      * Event handler that updates value of firstName when input is detected.
      * @param event The event provided by onChange.
@@ -207,6 +211,7 @@ function Main() {
                 email={email}
                 employer={employer}
                 employerLocation={employerLocation}
+                endEmployment={endEmployment}
                 firstName={firstName}
                 handleAddressInput={handleAddressInput}
                 handleBeginEmploymentDateInput={handleBeginEmploymentDateInput}
@@ -214,6 +219,7 @@ function Main() {
                 handleEmailInput={handleEmailInput}
                 handleEmployerInput={handleEmployerInput}
                 handleEmployerLocationInput={handleEmployerLocationInput}
+                handleEndEmploymentDateInput={handleEndEmploymentDateInput}
                 handleLastNameInput={handleLastNameInput}
                 handleLinkedInLink={handleLinkedInLink}
                 handlePhoneNumberInput={handlePhoneNumberInput}
@@ -234,6 +240,7 @@ function Main() {
                 email={email}
                 employer={employer}
                 employerLocation={employerLocation}
+                endEmployment={endEmployment}
                 firstName={firstName} 
                 lastName={lastName}
                 linkedInLink={linkedInLink}
