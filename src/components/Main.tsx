@@ -10,7 +10,7 @@
  *****************************************************************************/
 import CV from './CV';
 import Form from './Form';
-import React, { ChangeEvent, useRef, useState } from 'react';
+import React, { ChangeEvent, useState } from 'react';
 
 /**
  * Renders and manages hooks for the Form and CV Application child components.
