@@ -27,6 +27,7 @@ library.add(faMobileScreen);
  */
 interface CVProps {
     address: string;
+    beginEmployment: string;
     email: string;
     employer: string;
     employerLocation: string;
@@ -55,6 +56,7 @@ function addDefaultSrc(event: any) {
  */
 const CV : FC<CVProps> = ({
         address, 
+        beginEmployment,
         email,
         employer,
         employerLocation,
@@ -103,12 +105,13 @@ const CV : FC<CVProps> = ({
 
             <div className="cv-profile">
                 <div className="section-label profile-label">Profile</div>
-                <div className="profile">{profile}</div>
+                <div>{profile}</div>
             </div>
 
             <div className="employment-history">
                 <div className="section-label employment-label">Employment History</div>
-                <div className="position-info">{position}, {employer}, {employerLocation}</div>
+                <div>{position}, {employer}, {employerLocation}</div>
+                <div>{beginEmployment} - </div>
             </div>
         </div>
     );

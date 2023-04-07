@@ -15,11 +15,13 @@ import React, { FC } from 'react';
  */
 interface ApplicationProps {
     address: string;
+    beginEmployment: string;
     email: string;
     employer: string;
     employerLocation: string;
     firstName: string;
     handleAddressInput: any;
+    handleBeginEmploymentDateInput: any;
     handleEmailInput: any;
     handleEmployerInput: any;
     handleEmployerLocationInput: any;
@@ -47,11 +49,13 @@ interface ApplicationProps {
  */
 const Form : FC<ApplicationProps> = ({
         address,
+        beginEmployment,
         email,
         employer,
         employerLocation,
         firstName,
         handleAddressInput,
+        handleBeginEmploymentDateInput,
         handleEmailInput,
         handleEmployerInput,
         handleEmployerLocationInput,
@@ -214,6 +218,18 @@ const Form : FC<ApplicationProps> = ({
                         required
                         onChange={(event) => handleEmployerLocationInput(event)}
                         value={employerLocation}/>
+                </div>
+                <div className="form-row">
+                    <label htmlFor="begin-employment">Begin Employment</label>
+                    <input id="begin-employment"
+                        name="beginEmployment"
+                        type="text"
+                        placeholder="September, 2020"
+                        minLength={5}
+                        maxLength={20}
+                        required
+                        onChange={(event) => handleBeginEmploymentDateInput(event)}
+                        value={beginEmployment}/>
                 </div>
             </form>
         </div>

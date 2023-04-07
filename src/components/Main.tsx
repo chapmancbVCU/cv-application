@@ -65,6 +65,7 @@ function formatPhoneNumber(value: string): string {
  */
 function Main() {
     const [address, setAddress] = useState("");
+    const [beginEmployment, setBeginEmploymentDate] = useState(""); 
     const [email, setEmail] = useState("");
     const [employer, setEmployer] = useState("");
     const [employerLocation, setEmployerLocation] = useState("");
@@ -85,6 +86,9 @@ function Main() {
         setAddress(event.target.value);
     }
 
+    function handleBeginEmploymentDateInput(event: any) {
+        setBeginEmploymentDate(event.target.value);
+    }
     /**
      * Event handler that updates value of E-mail address when input is 
      * detected.
@@ -199,11 +203,13 @@ function Main() {
         <div className="main">
             <Form
                 address={address} 
+                beginEmployment={beginEmployment}
                 email={email}
                 employer={employer}
                 employerLocation={employerLocation}
                 firstName={firstName}
                 handleAddressInput={handleAddressInput}
+                handleBeginEmploymentDateInput={handleBeginEmploymentDateInput}
                 handleFirstNameInput={handleFirstNameInput}
                 handleEmailInput={handleEmailInput}
                 handleEmployerInput={handleEmployerInput}
@@ -224,6 +230,7 @@ function Main() {
                 uploadFile={uploadFile}
             />
             <CV address={address}
+                beginEmployment={beginEmployment}
                 email={email}
                 employer={employer}
                 employerLocation={employerLocation}
