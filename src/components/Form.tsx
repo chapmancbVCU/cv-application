@@ -76,6 +76,7 @@ const Form : FC<ApplicationProps> = ({
                         type="text"
                         minLength={5}
                         maxLength={25}
+                        placeholder="John"
                         required
                         onChange={(event) => handleFirstNameInput(event)}
                         value={firstName}/>
@@ -87,6 +88,7 @@ const Form : FC<ApplicationProps> = ({
                         type="text"
                         minLength={5}
                         maxLength={25}
+                        placeholder="Doe"
                         required
                         onChange={(event) => handleLastNameInput(event)}
                         value={lastName}/>
@@ -98,6 +100,7 @@ const Form : FC<ApplicationProps> = ({
                         type="text"
                         minLength={5}
                         maxLength={25}
+                        placeholder="Accountant"
                         required
                         onChange={(event) => handleTitleInput(event)}
                         value={title}/>
@@ -109,6 +112,7 @@ const Form : FC<ApplicationProps> = ({
                         type="text"
                         minLength={5}
                         maxLength={75}
+                        placeholder="123 Main Street, Westchestertonfieldville, Iowa 12345"
                         required
                         onChange={(event) => handleAddressInput(event)}
                         value={address}/>
@@ -153,6 +157,7 @@ const Form : FC<ApplicationProps> = ({
                         name="profile"
                         minLength={5}
                         maxLength={300}
+                        placeholder="Describe yourself in paragraph form..."
                         required
                         onChange={(event) => handleProfileInput(event)}
                         value={profile}>
