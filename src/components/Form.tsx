@@ -19,10 +19,14 @@ interface ApplicationProps {
     email: string;
     employer: string;
     employerLocation: string;
+    employmentBulletPoints: string[];
     endEmployment: string
     firstName: string;
     handleAddressInput: any;
     handleBeginEmploymentDateInput: any;
+    handleBulletPointAdd: any;
+    handleBulletPointInput: any;
+    handleBulletPointRemove: any;
     handleEmailInput: any;
     handleEmployerInput: any;
     handleEmployerLocationInput: any;
@@ -55,10 +59,14 @@ const Form : FC<ApplicationProps> = ({
         email,
         employer,
         employerLocation,
+        employmentBulletPoints,
         endEmployment,
         firstName,
         handleAddressInput,
         handleBeginEmploymentDateInput,
+        handleBulletPointAdd,
+        handleBulletPointInput,
+        handleBulletPointRemove,
         handleEmailInput,
         handleEmployerInput,
         handleEmployerLocationInput,
@@ -79,7 +87,9 @@ const Form : FC<ApplicationProps> = ({
         title,
         uploadFile
     }) => { 
-        
+
+    
+    //alert(employmentBulletPoints[0].bulletPoint)
     return(
         <div className="form-container">
             <h2>Personal Information</h2>
@@ -232,7 +242,8 @@ const Form : FC<ApplicationProps> = ({
                         minLength={5}
                         maxLength={20}
                         required
-                        onChange={(event) => handleBeginEmploymentDateInput(event)}
+                        onChange={(event) => 
+                            handleBeginEmploymentDateInput(event)}
                         value={beginEmployment}/>
                 </div>
                 <div className="form-row">
@@ -244,9 +255,46 @@ const Form : FC<ApplicationProps> = ({
                         minLength={5}
                         maxLength={20}
                         required
-                        onChange={(event) => handleEndEmploymentDateInput(event)}
+                        onChange={(event) => 
+                            handleEndEmploymentDateInput(event)}
                         value={endEmployment}/>
                 </div>
+                <h4>
+                    <label htmlFor="bulletpoint">Employment Highlights</label>
+                </h4>
+                
+                {employmentBulletPoints.map((bullet: any, index) => (
+                    <div key = {index} className="form-bullet-point">
+                        <div className="first-division">
+                            <input id="bulletpoint"
+                                name="bulletpoint"
+                                type="text"
+                                required
+                                placeholder="foo"
+                                value={bullet.bulletpoint}
+                                onChange={(event) => 
+                                    handleBulletPointInput(event, index)}
+                            />
+                            {employmentBulletPoints.length -1 === index && 
+                                employmentBulletPoints.length < 4 && 
+                                <button type="button" className="add-button"
+                                    onClick={() => handleBulletPointAdd()}>
+                                    <span>Add</span>
+                                </button>
+                            }
+                            
+                        </div>
+                        <div className="second-divison">
+                            {employmentBulletPoints.length > 1 && (
+                                <button type="button" className="remove-button"
+                                    onClick={() => 
+                                        handleBulletPointRemove(index)}>
+                                    <span>Remove</span>
+                                </button>
+                            )} 
+                        </div>
+                    </div>
+                ))}
             </form>
         </div>
     );   

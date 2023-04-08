@@ -31,6 +31,7 @@ interface CVProps {
     email: string;
     employer: string;
     employerLocation: string;
+    employmentBulletPoints: string[];
     endEmployment: string;
     firstName: string;
     lastName: string;
@@ -61,6 +62,7 @@ const CV : FC<CVProps> = ({
         email,
         employer,
         employerLocation,
+        employmentBulletPoints,
         endEmployment,
         firstName, 
         lastName, 
@@ -114,6 +116,13 @@ const CV : FC<CVProps> = ({
                 <div className="section-label employment-label">Employment History</div>
                 <div>{position}, {employer}, {employerLocation}</div>
                 <div>{beginEmployment} - {endEmployment}</div>
+                {
+                    employmentBulletPoints.map((bullet: any, index) => (
+                        <ul key={index}>
+                            {bullet.bulletpoint && <li>{bullet.bulletpoint}</li>}
+                        </ul>
+                    ))
+                }
             </div>
         </div>
     );

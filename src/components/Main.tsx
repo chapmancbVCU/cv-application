@@ -64,11 +64,14 @@ function formatPhoneNumber(value: string): string {
  * components.
  */
 function Main() {
+   
     const [address, setAddress] = useState("");
     const [beginEmployment, setBeginEmploymentDate] = useState(""); 
     const [email, setEmail] = useState("");
     const [employer, setEmployer] = useState("");
     const [employerLocation, setEmployerLocation] = useState("");
+    const [employmentBulletPoints, setEmploymentBulletPoints] = useState<any>(
+        [{bulletPoint: ""}]);
     const [endEmployment, setEndEmploymentDate] = useState("");
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
@@ -78,7 +81,7 @@ function Main() {
     const [profileImage, setProfileImage] = useState<File | null>(null);
     const [position, setPosition] = useState("");
     const [title, setTitle] = useState("");
-
+    console.log(employmentBulletPoints)
     /**
      * Event handler that updates value of address when input is detected.
      * @param event The event provided by onChange.
@@ -90,6 +93,25 @@ function Main() {
     function handleBeginEmploymentDateInput(event: any) {
         setBeginEmploymentDate(event.target.value);
     }
+
+    function handleBulletPointAdd() {
+        setEmploymentBulletPoints([...employmentBulletPoints, 
+            {bulletPoint: ""}]);
+    }
+
+    function handleBulletPointInput(event: any, index: number) {
+        const {name, value} = event.target;
+        const list = [...employmentBulletPoints];
+        list[index][name] = value;
+        setEmploymentBulletPoints(list);
+    }
+
+    function handleBulletPointRemove(index: number) {
+        const list = [...employmentBulletPoints];
+        list.splice(index, 1);
+        setEmploymentBulletPoints(list);
+    }
+
     /**
      * Event handler that updates value of E-mail address when input is 
      * detected.
@@ -211,10 +233,14 @@ function Main() {
                 email={email}
                 employer={employer}
                 employerLocation={employerLocation}
+                employmentBulletPoints={employmentBulletPoints}
                 endEmployment={endEmployment}
                 firstName={firstName}
                 handleAddressInput={handleAddressInput}
                 handleBeginEmploymentDateInput={handleBeginEmploymentDateInput}
+                handleBulletPointAdd={handleBulletPointAdd}
+                handleBulletPointInput={handleBulletPointInput}
+                handleBulletPointRemove={handleBulletPointRemove}
                 handleFirstNameInput={handleFirstNameInput}
                 handleEmailInput={handleEmailInput}
                 handleEmployerInput={handleEmployerInput}
@@ -240,6 +266,7 @@ function Main() {
                 email={email}
                 employer={employer}
                 employerLocation={employerLocation}
+                employmentBulletPoints={employmentBulletPoints}
                 endEmployment={endEmployment}
                 firstName={firstName} 
                 lastName={lastName}
