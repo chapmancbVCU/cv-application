@@ -4,10 +4,36 @@
   box-sizing: border-box;
 }
 
+.add-button {
+  align-self: flex-start;
+  display: flex;
+  align-items: center;
+  margin-top: 0.5rem;
+  color: rgb(0, 208, 255);
+  border: 1px solid rgb(0, 208, 255);
+}
+
 body {
   font-family: "Helvetica", "Arial", sans-serif;
   font-size: 16px;
   line-height: 1.3;
+}
+
+button {
+  background: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+
+  border: none;
+  border-radius: 3px;
+
+  width: 70px;
+  height: 32px;
+  cursor: pointer;
+
+  margin: 10px auto;
 }
 
 .cv-container {
@@ -86,6 +112,22 @@ body {
   margin-right: 10px;
 }
 
+.first-division {
+  display: flex;
+  flex-direction: column;
+  margin: 0 5px 0.5rem 0;
+  width: 100%;
+}
+
+.first-division input {
+  margin: 10px auto;
+}
+
+.form-bullet-point {
+  display: flex;
+  justify-content: space-between;
+}
+
 .form-row {
   margin-bottom: 40px;
   display: flex;
@@ -93,6 +135,7 @@ body {
   flex-direction: column;
 }
 
+.first-division input[type='text'],
 .form-row input[type='text'],
 .form-row input[type='tel'],
 .form-row input[type='email'],
@@ -106,6 +149,7 @@ body {
   font-size: 14px;
 }
 
+.first-division input[type='text']:invalid,
 .form-row input[type='text']:invalid,
 .form-row input[type='tel']:invalid,
 .form-row input[type='email']:invalid,
@@ -115,6 +159,7 @@ body {
   box-shadow: none;   /* Remove default red glow in Firefox. */
 }
 
+.first-division input[type='text']:valid,
 .form-row input[type='text']:valid,
 .form-row input[type='tel']:valid,
 .form-row input[type='email']:valid,
@@ -145,7 +190,7 @@ h2 {
   text-align: center;
 }
 
-h3 {
+h3, h4 {
   text-align: center;
   margin-bottom: 15px;
 }
@@ -177,11 +222,25 @@ h3 {
   text-align: center;
 }
 
+.remove-button {
+  color: red;
+  border: 1px solid red;
+}
+
 .section-label {
   background-color: black;
   color: white;
   margin-top: 15px;
   margin-bottom: 10px;
+}
+
+span {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+ul {
+  margin-left: 15px;
 }
 
 @media only screen and (min-width: 1000px) {
