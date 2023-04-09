@@ -41,6 +41,7 @@ interface CVProps {
     profile: string;
     profileImage: any;
     position: string;
+    schoolLocation: string;
     schoolName: string;
     title: string;
 }
@@ -74,6 +75,7 @@ const CV : FC<CVProps> = ({
         profile, 
         profileImage,
         position,
+        schoolLocation,
         schoolName,
         title
     }) => {
@@ -131,7 +133,7 @@ const CV : FC<CVProps> = ({
 
             <div className="education-history">
                 <div className="section-label education-label">Education History</div>
-                <div>{degree}, {schoolName}</div>
+                <div>{degree}, {schoolName}, {schoolLocation}</div>
             </div>
         </div>
     );

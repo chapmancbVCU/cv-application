@@ -81,9 +81,10 @@ function Main() {
     const [profile, setProfile] = useState("");
     const [profileImage, setProfileImage] = useState<File | null>(null);
     const [position, setPosition] = useState("");
+    const [schoolLocation, setSchoolLocation] = useState("");
     const [schoolName, setSchoolName] = useState("");
     const [title, setTitle] = useState("");
-    console.log(employmentBulletPoints)
+
     /**
      * Event handler that updates value of address when input is detected.
      * @param event The event provided by onChange.
@@ -199,6 +200,10 @@ function Main() {
         setPosition(event.target.value);
     }
 
+    function handleSchoolLocationInput(event: any) {
+        setSchoolLocation(event.target.value);
+    }
+
     function handleSchoolNameInput(event: any) {
         setSchoolName(event.target.value);
     }
@@ -263,6 +268,7 @@ function Main() {
                 handlePhoneNumberInput={handlePhoneNumberInput}
                 handleProfileInput={handleProfileInput}
                 handlePositionInput={handlePositionInput}
+                handleSchoolLocationInput={handleSchoolLocationInput}
                 handleSchoolNameInput={handleSchoolNameInput}
                 handleTitleInput={handleTitleInput}
                 lastName={lastName} 
@@ -271,6 +277,7 @@ function Main() {
                 phoneNumberFormatter={phoneNumberFormatter}
                 profile={profile}
                 position={position}
+                schoolLocation={schoolLocation}
                 schoolName={schoolName}
                 title={title} 
                 uploadFile={uploadFile}
@@ -290,6 +297,7 @@ function Main() {
                 profile={profile}
                 profileImage={profileImage}
                 position={position}
+                schoolLocation={schoolLocation}
                 schoolName={schoolName}
                 title={title}
             />

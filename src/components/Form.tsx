@@ -39,6 +39,7 @@ interface ApplicationProps {
     handlePhoneNumberInput: any;
     handleProfileInput: any;
     handlePositionInput: any;
+    handleSchoolLocationInput: any;
     handleSchoolNameInput: any;
     handleTitleInput: any;
     lastName: string;
@@ -47,6 +48,7 @@ interface ApplicationProps {
     phoneNumberFormatter: any;
     profile: string;
     position: string;
+    schoolLocation: string;
     schoolName: string;
     title: string;
     uploadFile: any;
@@ -83,6 +85,7 @@ const Form : FC<ApplicationProps> = ({
         handlePhoneNumberInput,
         handleProfileInput,
         handlePositionInput,
+        handleSchoolLocationInput,
         handleSchoolNameInput,
         handleTitleInput,
         lastName,
@@ -91,6 +94,7 @@ const Form : FC<ApplicationProps> = ({
         phone,
         position,
         profile,
+        schoolLocation,
         schoolName,
         title,
         uploadFile
@@ -312,7 +316,7 @@ const Form : FC<ApplicationProps> = ({
                         type="text"
                         placeholder="Degree / Diploma / Certificate"
                         minLength={5}
-                        maxLength={20}
+                        maxLength={80}
                         required
                         onChange={(event) => 
                             handleDegreeInput(event)}
@@ -325,11 +329,24 @@ const Form : FC<ApplicationProps> = ({
                         type="text"
                         placeholder="School / College / Institution"
                         minLength={5}
-                        maxLength={20}
+                        maxLength={80}
                         required
                         onChange={(event) => 
                             handleSchoolNameInput(event)}
                         value={schoolName}/>
+                </div>
+                <div className="form-row">
+                    <label htmlFor="school-name">School Location</label>
+                    <input id="school-location"
+                        name="school-location"
+                        type="text"
+                        placeholder="New York, New York"
+                        minLength={5}
+                        maxLength={80}
+                        required
+                        onChange={(event) => 
+                            handleSchoolLocationInput(event)}
+                        value={schoolLocation}/>
                 </div>
             </form>
         </div>
