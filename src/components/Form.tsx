@@ -269,8 +269,8 @@ const Form : FC<ApplicationProps> = ({
                             <input id="bulletpoint"
                                 name="bulletpoint"
                                 type="text"
+                                minLength={5}
                                 required
-                                placeholder="foo"
                                 value={bullet.bulletpoint}
                                 onChange={(event) => 
                                     handleBulletPointInput(event, index)}
