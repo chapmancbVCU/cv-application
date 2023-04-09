@@ -95,19 +95,38 @@ function Main() {
         setAddress(event.target.value);
     }
 
+    /**
+     * Event handler that updates value begin education date when input is 
+     * detected.
+     * @param event The event provided by onChange.
+     */
     function handleBeginEducationDateInput(event: any) {
         setBeginEducationDate(event.target.value);
     }
 
+    /**
+     * Event handler that updates value of begin employment date when input is 
+     * detected.
+     * @param event The event provided by onChange.
+     */
     function handleBeginEmploymentDateInput(event: any) {
         setBeginEmploymentDate(event.target.value);
     }
 
+    /**
+     * Adds new text input for career highlights section when user clicks on 
+     * the add button.
+     */
     function handleBulletPointAdd() {
         setEmploymentBulletPoints([...employmentBulletPoints, 
             {bulletPoint: ""}]);
     }
 
+    /**
+     * Updates CV when user adds content to career highlight input.
+     * @param event The event provided by onChange
+     * @param index Position in array for bullet point we want to update.
+     */
     function handleBulletPointInput(event: any, index: number) {
         const {name, value} = event.target;
         const list = [...employmentBulletPoints];
@@ -115,12 +134,20 @@ function Main() {
         setEmploymentBulletPoints(list);
     }
 
+    /**
+     * Removes bullet point input for career highlight in form.
+     * @param index Position in array for bullet point input we want to remove.
+     */
     function handleBulletPointRemove(index: number) {
         const list = [...employmentBulletPoints];
         list.splice(index, 1);
         setEmploymentBulletPoints(list);
     }
 
+    /**
+     * Event handler that updates value of degree title when input is detected.
+     * @param event The event provided by onChange.
+     */
     function handleDegreeInput(event: any) {
         setDegree(event.target.value);
     }
@@ -152,13 +179,23 @@ function Main() {
         setEmployerLocation(event.target.value);
     }
 
+    /**
+     * Event handler that updates value education graduation date when input 
+     * is detected.
+     * @param event The event provided by onChange.
+     */
     function handleEndEducationDateInput(event: any) {
         setEndEducationDate(event.target.value);
     }
 
+    /**
+     * Event handler that updates value of CV title when input is detected.
+     * @param event The event provided by onChange.
+     */
     function handleEndEmploymentDateInput(event: any) {
         setEndEmploymentDate(event.target.value);
     }
+
     /**
      * Event handler that updates value of firstName when input is detected.
      * @param event The event provided by onChange.
@@ -210,10 +247,20 @@ function Main() {
         setPosition(event.target.value);
     }
 
+    /**
+     * Event handler that updates value of school location when input is 
+     * detected.
+     * @param event The event provided by onChange.
+     */
     function handleSchoolLocationInput(event: any) {
         setSchoolLocation(event.target.value);
     }
 
+    /**
+     * Event handler that updates value of begin education date when input is
+     *  detected.
+     * @param event The event provided by onChange.
+     */
     function handleSchoolNameInput(event: any) {
         setSchoolName(event.target.value);
     }
