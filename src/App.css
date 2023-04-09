@@ -49,6 +49,7 @@ button {
 
 .cv-details,
 .cv-profile,
+.education-history,
 .employment-history {
   margin-top: 25px;
   margin-left: 35px;
@@ -100,6 +101,11 @@ button {
 
 .details-label {
   width: 60px;
+  text-align: center;
+}
+
+.education-label {
+  width: 145px;
   text-align: center;
 }
 
