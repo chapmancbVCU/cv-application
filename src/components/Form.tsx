@@ -16,6 +16,7 @@ import React, { FC } from 'react';
 interface ApplicationProps {
     address: string;
     beginEmployment: string;
+    degree: string;
     email: string;
     employer: string;
     employerLocation: string;
@@ -27,6 +28,7 @@ interface ApplicationProps {
     handleBulletPointAdd: any;
     handleBulletPointInput: any;
     handleBulletPointRemove: any;
+    handleDegreeInput: any;
     handleEmailInput: any;
     handleEmployerInput: any;
     handleEmployerLocationInput: any;
@@ -37,6 +39,7 @@ interface ApplicationProps {
     handlePhoneNumberInput: any;
     handleProfileInput: any;
     handlePositionInput: any;
+    handleSchoolNameInput: any;
     handleTitleInput: any;
     lastName: string;
     linkedInLink: string;
@@ -44,6 +47,7 @@ interface ApplicationProps {
     phoneNumberFormatter: any;
     profile: string;
     position: string;
+    schoolName: string;
     title: string;
     uploadFile: any;
 }
@@ -56,6 +60,7 @@ interface ApplicationProps {
 const Form : FC<ApplicationProps> = ({
         address,
         beginEmployment,
+        degree,
         email,
         employer,
         employerLocation,
@@ -67,6 +72,7 @@ const Form : FC<ApplicationProps> = ({
         handleBulletPointAdd,
         handleBulletPointInput,
         handleBulletPointRemove,
+        handleDegreeInput,
         handleEmailInput,
         handleEmployerInput,
         handleEmployerLocationInput,
@@ -77,6 +83,7 @@ const Form : FC<ApplicationProps> = ({
         handlePhoneNumberInput,
         handleProfileInput,
         handlePositionInput,
+        handleSchoolNameInput,
         handleTitleInput,
         lastName,
         linkedInLink,
@@ -84,6 +91,7 @@ const Form : FC<ApplicationProps> = ({
         phone,
         position,
         profile,
+        schoolName,
         title,
         uploadFile
     }) => { 
@@ -295,6 +303,34 @@ const Form : FC<ApplicationProps> = ({
                         </div>
                     </div>
                 ))}
+
+                <h3>Education</h3>
+                <div className="form-row">
+                    <label htmlFor="degree">Program</label>
+                    <input id="degree"
+                        name="degree"
+                        type="text"
+                        placeholder="Degree / Diploma / Certificate"
+                        minLength={5}
+                        maxLength={20}
+                        required
+                        onChange={(event) => 
+                            handleDegreeInput(event)}
+                        value={degree}/>
+                </div>
+                <div className="form-row">
+                    <label htmlFor="school-name">School</label>
+                    <input id="school-name"
+                        name="school-name"
+                        type="text"
+                        placeholder="School / College / Institution"
+                        minLength={5}
+                        maxLength={20}
+                        required
+                        onChange={(event) => 
+                            handleSchoolNameInput(event)}
+                        value={schoolName}/>
+                </div>
             </form>
         </div>
     );   

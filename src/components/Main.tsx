@@ -67,6 +67,7 @@ function Main() {
    
     const [address, setAddress] = useState("");
     const [beginEmployment, setBeginEmploymentDate] = useState(""); 
+    const [degree, setDegree] = useState("");
     const [email, setEmail] = useState("");
     const [employer, setEmployer] = useState("");
     const [employerLocation, setEmployerLocation] = useState("");
@@ -80,6 +81,7 @@ function Main() {
     const [profile, setProfile] = useState("");
     const [profileImage, setProfileImage] = useState<File | null>(null);
     const [position, setPosition] = useState("");
+    const [schoolName, setSchoolName] = useState("");
     const [title, setTitle] = useState("");
     console.log(employmentBulletPoints)
     /**
@@ -110,6 +112,10 @@ function Main() {
         const list = [...employmentBulletPoints];
         list.splice(index, 1);
         setEmploymentBulletPoints(list);
+    }
+
+    function handleDegreeInput(event: any) {
+        setDegree(event.target.value);
     }
 
     /**
@@ -193,6 +199,10 @@ function Main() {
         setPosition(event.target.value);
     }
 
+    function handleSchoolNameInput(event: any) {
+        setSchoolName(event.target.value);
+    }
+
     /**
      * Event handler that updates value of CV title when input is detected.
      * @param event The event provided by onChange.
@@ -230,6 +240,7 @@ function Main() {
             <Form
                 address={address} 
                 beginEmployment={beginEmployment}
+                degree={degree}
                 email={email}
                 employer={employer}
                 employerLocation={employerLocation}
@@ -241,6 +252,7 @@ function Main() {
                 handleBulletPointAdd={handleBulletPointAdd}
                 handleBulletPointInput={handleBulletPointInput}
                 handleBulletPointRemove={handleBulletPointRemove}
+                handleDegreeInput={handleDegreeInput}
                 handleFirstNameInput={handleFirstNameInput}
                 handleEmailInput={handleEmailInput}
                 handleEmployerInput={handleEmployerInput}
@@ -251,6 +263,7 @@ function Main() {
                 handlePhoneNumberInput={handlePhoneNumberInput}
                 handleProfileInput={handleProfileInput}
                 handlePositionInput={handlePositionInput}
+                handleSchoolNameInput={handleSchoolNameInput}
                 handleTitleInput={handleTitleInput}
                 lastName={lastName} 
                 linkedInLink={linkedInLink}
@@ -258,11 +271,13 @@ function Main() {
                 phoneNumberFormatter={phoneNumberFormatter}
                 profile={profile}
                 position={position}
+                schoolName={schoolName}
                 title={title} 
                 uploadFile={uploadFile}
             />
             <CV address={address}
                 beginEmployment={beginEmployment}
+                degree={degree}
                 email={email}
                 employer={employer}
                 employerLocation={employerLocation}
@@ -275,6 +290,7 @@ function Main() {
                 profile={profile}
                 profileImage={profileImage}
                 position={position}
+                schoolName={schoolName}
                 title={title}
             />
         </div>
