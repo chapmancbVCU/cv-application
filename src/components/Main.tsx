@@ -66,6 +66,7 @@ function formatPhoneNumber(value: string): string {
 function Main() {
    
     const [address, setAddress] = useState("");
+    const [beginEducation, setBeginEducationDate] = useState("")
     const [beginEmployment, setBeginEmploymentDate] = useState(""); 
     const [degree, setDegree] = useState("");
     const [email, setEmail] = useState("");
@@ -73,6 +74,7 @@ function Main() {
     const [employerLocation, setEmployerLocation] = useState("");
     const [employmentBulletPoints, setEmploymentBulletPoints] = useState<any>(
         [{bulletPoint: ""}]);
+    const [endEducation, setEndEducationDate] = useState("");
     const [endEmployment, setEndEmploymentDate] = useState("");
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
@@ -91,6 +93,10 @@ function Main() {
      */
     function handleAddressInput(event: any) {
         setAddress(event.target.value);
+    }
+
+    function handleBeginEducationDateInput(event: any) {
+        setBeginEducationDate(event.target.value);
     }
 
     function handleBeginEmploymentDateInput(event: any) {
@@ -144,6 +150,10 @@ function Main() {
      */
     function handleEmployerLocationInput(event: any) {
         setEmployerLocation(event.target.value);
+    }
+
+    function handleEndEducationDateInput(event: any) {
+        setEndEducationDate(event.target.value);
     }
 
     function handleEndEmploymentDateInput(event: any) {
@@ -244,15 +254,18 @@ function Main() {
         <div className="main">
             <Form
                 address={address} 
+                beginEducation={beginEducation}
                 beginEmployment={beginEmployment}
                 degree={degree}
                 email={email}
                 employer={employer}
                 employerLocation={employerLocation}
                 employmentBulletPoints={employmentBulletPoints}
+                endEducation={endEducation}
                 endEmployment={endEmployment}
                 firstName={firstName}
                 handleAddressInput={handleAddressInput}
+                handleBeginEducationDateInput={handleBeginEducationDateInput}
                 handleBeginEmploymentDateInput={handleBeginEmploymentDateInput}
                 handleBulletPointAdd={handleBulletPointAdd}
                 handleBulletPointInput={handleBulletPointInput}
@@ -262,6 +275,7 @@ function Main() {
                 handleEmailInput={handleEmailInput}
                 handleEmployerInput={handleEmployerInput}
                 handleEmployerLocationInput={handleEmployerLocationInput}
+                handleEndEducationDateInput={handleEndEducationDateInput}
                 handleEndEmploymentDateInput={handleEndEmploymentDateInput}
                 handleLastNameInput={handleLastNameInput}
                 handleLinkedInLink={handleLinkedInLink}
@@ -283,12 +297,14 @@ function Main() {
                 uploadFile={uploadFile}
             />
             <CV address={address}
+                beginEducation={beginEducation}
                 beginEmployment={beginEmployment}
                 degree={degree}
                 email={email}
                 employer={employer}
                 employerLocation={employerLocation}
                 employmentBulletPoints={employmentBulletPoints}
+                endEducation={endEducation}
                 endEmployment={endEmployment}
                 firstName={firstName} 
                 lastName={lastName}

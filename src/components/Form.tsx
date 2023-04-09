@@ -15,15 +15,18 @@ import React, { FC } from 'react';
  */
 interface ApplicationProps {
     address: string;
+    beginEducation: string;
     beginEmployment: string;
     degree: string;
     email: string;
     employer: string;
     employerLocation: string;
     employmentBulletPoints: string[];
+    endEducation: string;
     endEmployment: string
     firstName: string;
     handleAddressInput: any;
+    handleBeginEducationDateInput: any;
     handleBeginEmploymentDateInput: any;
     handleBulletPointAdd: any;
     handleBulletPointInput: any;
@@ -32,6 +35,7 @@ interface ApplicationProps {
     handleEmailInput: any;
     handleEmployerInput: any;
     handleEmployerLocationInput: any;
+    handleEndEducationDateInput: any;
     handleEndEmploymentDateInput: any;
     handleFirstNameInput: any;
     handleLastNameInput: any;
@@ -61,15 +65,18 @@ interface ApplicationProps {
  */
 const Form : FC<ApplicationProps> = ({
         address,
+        beginEducation,
         beginEmployment,
         degree,
         email,
         employer,
         employerLocation,
         employmentBulletPoints,
+        endEducation,
         endEmployment,
         firstName,
         handleAddressInput,
+        handleBeginEducationDateInput,
         handleBeginEmploymentDateInput,
         handleBulletPointAdd,
         handleBulletPointInput,
@@ -78,6 +85,7 @@ const Form : FC<ApplicationProps> = ({
         handleEmailInput,
         handleEmployerInput,
         handleEmployerLocationInput,
+        handleEndEducationDateInput,
         handleEndEmploymentDateInput,
         handleFirstNameInput,
         handleLastNameInput,
@@ -261,7 +269,7 @@ const Form : FC<ApplicationProps> = ({
                 <div className="form-row">
                     <label htmlFor="end-employment">End Employment</label>
                     <input id="end-employment"
-                        name="end-mployment"
+                        name="end-employment"
                         type="text"
                         placeholder="December, 2022"
                         minLength={5}
@@ -347,6 +355,32 @@ const Form : FC<ApplicationProps> = ({
                         onChange={(event) => 
                             handleSchoolLocationInput(event)}
                         value={schoolLocation}/>
+                </div>
+                <div className="form-row">
+                    <label htmlFor="begin-employment">Begin Education</label>
+                    <input id="begin-education"
+                        name="begin-education"
+                        type="text"
+                        placeholder="August, 2015"
+                        minLength={5}
+                        maxLength={20}
+                        required
+                        onChange={(event) => 
+                            handleBeginEducationDateInput(event)}
+                        value={beginEducation}/>
+                </div>
+                <div className="form-row">
+                    <label htmlFor="end-education">End Education</label>
+                    <input id="end-education"
+                        name="end-education"
+                        type="text"
+                        placeholder="May, 2020"
+                        minLength={5}
+                        maxLength={20}
+                        required
+                        onChange={(event) => 
+                            handleEndEducationDateInput(event)}
+                        value={endEducation}/>
                 </div>
             </form>
         </div>
